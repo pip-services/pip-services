@@ -32,7 +32,7 @@ Component configuration has the following structure:
 
 - **descriptor** - component descriptor used to locate component factory
   - **group** – logical group the component belongs to
-  - **type** – type of the physical implementation, such as: memory, file, mongodb, mysql, etc.
+  - **type** – function type, such as: memory, file, mongodb, mysql, etc.
   - **version** - compatibility version if applicable
 - **connection** - database or service connection properties
   - **uri** - connection uri
@@ -51,6 +51,168 @@ Component configuration has the following structure:
   - **...** - custom properties
 - **options** - component custom configuration properties
   - **...** - custom properties  
+
+### Component descriptors
+
+Component descriptors are used to identify and locate microservice components
+by one or few parameters: component category, logical group, functional type and compatibility version.
+Below you can see examples how descriptors are used in microservice configurations.
+
+Define console logger by type (group and version are skipped)
+```javascript
+{
+    ...
+    "loggers": {
+        "descriptor": {
+            "type": "console"
+        },
+        ...
+    }
+```
+
+Persistence components specified by group and type (version is skipped)
+```javascript
+{
+    ...
+    "persistence": [
+        {
+            "descriptor": {
+                "group": "pip-services-storage-blocks",
+                "type": "mongodb"
+            },
+            ...
+        },
+        {
+            "descriptor": {
+                "group": "pip-services-storage-content",
+                "type": "aws3"
+            },
+            ...
+        }
+    ],
+    ...
+}
+```
+
+Service and client components specified by group, type and version
+```javascript
+{
+    ...
+    "clients": {
+        "descriptor: {
+            "group": "pip-services-storage",
+            "type": "seneca",
+            "version": "1.0"
+        },
+        ...
+    },
+    "services": {
+        "descriptor: {
+            "group": "pip-services-announces",
+            "type": "rest",
+            "version": "1.0"
+        },
+        ...
+    },
+    ...
+}
+```
+
+### Example of complete JSON configuration file
+
+```javascript
+{    
+    "logs": {
+        "descriptor": {
+            "type": "console"
+        },
+        "options": {
+            "level": 10
+        }
+    },
+    
+    "counters": {
+        "descriptor": {
+            "type": "log"
+        },
+        "options": {
+            "timeout": 10000
+        }
+    },
+
+    "persistence": {
+        "descriptor": {
+            "group": "pip-services-announces",            
+            "type": "mongodb"
+        },
+        "connection": {
+            "uri": "mongodb://localhost/pipservicestest"
+        },
+        "options": {
+            "server": {
+                "poolSize": 4,
+                "socketOptions": {
+                    "keepAlive": 1,
+                    "connectTimeoutMS": 5000
+                },
+                "auto_reconnect": true
+            },
+            "debug": false        
+        }
+    },
+
+    "controllers": {
+        "descriptor": {
+            "group": "pip-services-announces"            
+        },
+        "options": {
+            "maxTagCount": 1000
+        }
+    },
+
+    "clients": [
+        {
+            "descriptor": {
+                "group": "pip-services-storage",            
+                "type": "rest",
+                "version": "1.0"
+            },
+            "endpoint": {
+                "type": "http",
+                "host": "localhost",
+                "port": 8010
+            }
+        }
+    ],
+
+    "services": [
+        {
+            "descriptor": {
+                "group": "pip-services-announces",            
+                "type": "seneca",
+                "version": "1.0"
+            },
+            "endpoint": {
+                "type": "tcp",
+                "host": "localhost",
+                "port": 8811
+            }
+        },
+        {
+            "descriptor": {
+                "group": "pip-services-announces",            
+                "type": "rest",
+                "version": "1.0"
+            },
+            "endpoint": {
+                "type": "http",
+                "host": "localhost",
+                "port": 8011
+            }
+        }
+    ]    
+}
+``` 
 
 ## <a name="factories"></a> Factories
 
@@ -75,26 +237,6 @@ It may contain configuration of a **ConfigReader** component to retrieve configu
 
 The configuration is located in configuration repository by unique key. After retrival, it is added (or replaces) 
 the initial configuration and bootstrap process continues.
-
-Example to retrieve microservice configuration remote repository by key 'pip-services-xyz':
-```javascript
-{
-    "config": {
-        "descriptor": {
-            "type": "rest"
-        },
-        "endpoint": {
-            "protocol": "http",
-            "host": "config.mydomain.com",
-            "port": "8020"
-        },
-        "options": {
-            "key": "pip-services-xyz" // Microservice config key
-        }
-    } 
-    ...
-}
-```
 
 ### <a name="config-file"></a> File Config
 
@@ -121,6 +263,8 @@ repository implemented by [pip-services-config](https://github.com/pip-services/
   - **protocol** - connection protocol. Supported protocols: http or https
   - **host** - host name
   - **port** - port name
+- **options**
+  - **key** - unique key of microservice config to be retrieved
 
 ## <a name="logs"></a> Logs
 
