@@ -98,6 +98,7 @@ This project would not be possible without effort contributed by particular indi
 - **Sergey Seroukhov** - the project founder, microservice architecture and runtime implementation
 - **Mark Zontak** - Node.js and .NET implementations, AWS integration
 - **Volodymyr Tkachenko** - .NET implementation, Service Fabric and Docker deployments
+- **Alex Masliev** - Website and graphics
 
 We also would like to recognize help received from the following companies.
 
