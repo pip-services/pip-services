@@ -3,21 +3,21 @@
 Microservices architectural style is quickly becoming popular among software developers.
 But variety of languages, platforms and frameworks, as well as lack of standards
 make it difficult to find ready-to-use components that you can drop and use into your system.
-SaaS services offer fairly good solution to that problem. But they also come with serious tradeoffs.
-You give up control over functionality and data, you may pay extra to SaaS providers,
-you are limited to features that are given to you and so on. Moreover, not everything can and shall
+SaaS services offer fairly good solution to that problem. But they also come with difficult tradeoffs.
+You have to give up control over functionality and data. You may pay extra to SaaS providers.
+You are limited to features that are given to you and so on. Moreover, not everything can and shall
 run on the cloud. In that case SaaS services is not a good help.
 
-Pip.Services team tries to offer a different solution - a collection of reusable microservices
+Pip.Services team offers a different solution - a collection of reusable microservices
 that you can take, modify and deploy as a part of your own system. You regain full control over
 functionality and operations. You are able to pick any type of persistence storage,
 infrastructural components like logging, performance and health monitoring. You can deploy
 microservices on virtually any platform and use them from any programming language.
 
-That level of flexibility was possible due to [componentized microservice architecture](design/Architecture.md).
-You can simply take a microservice, pick necessary components for persistence, logging, performance counters, 
-service endpoints and client connectors and describe it in a [simple configuration](usage/Configuration.md).
-After that microservice is ready to be deployed in various development or production environments.
+That level of flexibility becomes possible due to [componentized microservice architecture](design/Architecture.md).
+You can simply take a microservice, pick the necessary components for persistence, logging, caching, discovery, 
+performance counters, service endpoints and client connectors and describe it in a [simple configuration](usage/Configuration.md).
+After that microservice is ready to be deployed in the target development or production environments.
 
 <div style="border: 1px solid #ccc">
   <img src="https://github.com/pip-services/pip-services/blob/master/design/Overview.png" alt="Pip.Services Overview" style="display:block;">

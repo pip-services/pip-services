@@ -43,6 +43,7 @@ Component configuration has the following structure:
   - **...** - custom properties
 - **endpoint** or **endpoints** - service endpoint properties
   - **discover** - service name to lookup at discovery service
+  - **protocol** - connection protocol
   - **host** - host name
   - **port** - port name
   - **user** - user name
@@ -60,13 +61,17 @@ TBD
 
 ## <a name="discovery"></a> Discovery
 
+Service discovery allows to register microservice endpoints in remote discovery service and then
+resolve them for connecting clients. That mechanism becomes critical for large-scale systems to implement
+client discovery mechanisms.
+
 TBD...
 
 ## <a name="config"></a> Config
 
 In certain situations is it better to keep component configurations in centralized configuration repository
 and retrieve the latest configuration during microservice bootstrap process. **Config** section is optional.
-It may contain configuration of **ConfigReader** component. It reads configuration from the external repository.
+It may contain configuration of a **ConfigReader** component to retrieve configuration from the external repository.
 
 The configuration is located in configuration repository by unique key. After retrival, it is added (or replaces) 
 the initial configuration and bootstrap process continues.
@@ -75,72 +80,100 @@ Example to retrieve microservice configuration remote repository by key 'pip-ser
 ```javascript
 {
     "config": {
-        "type": "remote",
-        "transport": {
-            "type": "rest",
+        "descriptor": {
+            "type": "rest"
+        },
+        "endpoint": {
+            "protocol": "http",
             "host": "config.mydomain.com",
             "port": "8020"
         },
-        "key": "pip-services-xyz" // Microservice config key
+        "options": {
+            "key": "pip-services-xyz" // Microservice config key
+        }
     } 
     ...
 }
 ```
 
-This is an optional section and can be omitted in the configuration.
+### <a name="config-file"></a> File Config
 
-## <a name="log"></a> Log
+The simplest configuration component that reads configuration from external file.
 
-The **Log** section defines configuration of the microservice logger component. 
-Based on the needs of the application,  logging can be configured to support different logging mechanisms:
-- **null**: disable logging completely 
-- **console**: log output to the console
-- **file**: log output to a file
-- **remote**: logs output to a centralized remote location.
+- **descriptor**
+  - **group**: "pip-services-runtime-config"
+  - **type**: "file"
+  - **version**: "*"
+- **options**
+  - **path**: string - path to the configuration file
 
-The logging level is also configurable, which will allow output of more or less detailed logs.
+### <a name="config-remote"></a> REST Config
 
-Example to disable log:
-```javascript
-{
-    ...
-    "log": {
-        "type": "null" // Disable log
-    } 
-    ...
-}
-```
+The configuration component that reads configuration from distributed configuration
+repository implemented by [pip-services-config](https://github.com/pip-services/pip-services-config) microservice
 
-Example to output detailed logs to console:
-```javascript
-{
-    ...
-    "log": {
-        "type": "console",
-        "level": 5  // All except trace
-    } 
-    ...
-}
-```
- 
-Example to send logs to remote logging server 
-```javascript
-{
-    ...
-    "log": {
-        "type": "remote",
-        "transport": {
-            "type": "rest",
-            "host": "log.mydomain.com",
-            "port": "8021"
-        },
-        "level": 3 // Only fatal, error and warn
-    } 
-    ...
-}
-```
+- **descriptor**
+  - **group**: "pip-services-runtime-config"
+  - **type**: "rest"
+  - **version**: "1.0"
+- **endpoint** or **endpoints**
+  - **discover** - service name to lookup at discovery service
+  - **protocol** - connection protocol. Supported protocols: http or https
+  - **host** - host name
+  - **port** - port name
 
-This is an optional section and can be omitted in the configuration.
+## <a name="logs"></a> Logs
+
+Logs section defines logger components that capture log output from other microservice components
+that can be used for monitoring and troubleshooting. Microservice may contain more then one logger.
+
+Loggers are able to filter output messages using log level
+- **fatal** - outputs only critical errors that cause microservice to crash
+- **error** - outputs all errors occured in microservice
+- **warn** - outputs all errors and warning messages
+- **info** - outputs errors, warnings and key information messages
+- **debug** - outputs everything, excluding detail traces
+- **trace** - outputs everything, including all detail traces
+
+### <a name="logs-null"></a> Null Logs
+
+Logger that doesn't do anything
+
+- **descriptor**
+  - **group**: "pip-services-runtime-logs"
+  - **type**: "null"
+  - **version**: "*"
+- **options**
+  - **level**: string - log level: fatal, error, warn, info, debug, trace. (Default: error)
+
+### <a name="logs-console"></a> Console Logs
+
+Logger that formats and writes log messages to console. 
+Errors go into Stderr stream, while all other messages are wrote to Stdout stream
+
+- **descriptor**
+  - **group**: "pip-services-runtime-logs"
+  - **type**: "console"
+  - **version**: "*"
+- **options**
+  - **level**: string - log level: fatal, error, warn, info, debug, trace. (Default: error)
+
+### <a name="logs-rest"></a> REST Logs
+
+Logger that sends log messages to distributed log service implemented 
+by [pip-services-logging](https://github.com/pip-services/pip-services-logging) microservice
+
+- **descriptor**
+  - **group**: "pip-services-runtime-logs"
+  - **type**: "console"
+  - **version**: "*"
+- **options**
+  - **level**: string - log level: fatal, error, warn, info, debug, trace. (Default: error)
+- **endpoint** or **endpoints**
+  - **discover** - service name to lookup at discovery service
+  - **protocol** - connection protocol. Supported protocols: http or https
+  - **host** - host name
+  - **port** - port name
 
 ## <a name="counters"></a> Counters
 
@@ -190,14 +223,14 @@ Example to send performance metrics to remote server
 
 This is an optional section and can be omitted in the configuration.
 
-## <a name="db"></a> Db
+## <a name="persistence"></a> Persistence
 
 The **Db** section defines configuration of the microservice data access component. The current microservices support 
 two types of persistence: flat files or MongoDB. Flat files are great for development and testing, 
 while MongoDB is a good option with outstanding performance and scalability, suitable for demanding production installations. 
 You can choose and configure the option that suits your needs.
 
-### <a name="db_file"></a> File
+### <a name="persistence_file"></a> File Persistence
 
 Flat file persistence has the following configuration properties:
 - type: 'file' - type that designates flat file persistence
@@ -217,7 +250,7 @@ Example:
 }
 ```
 
-### <a name="db_mongodb"></a> MongoDB
+### <a name="persistence_mongodb"></a> MongoDB Persistence
 
 MongoDB persistence has the following configuration properties:
 - type: 'mongodb' - type that designates mongodb persistence
@@ -248,14 +281,14 @@ Example:
 }
 ```
 
-## <a name="deps"></a> Deps
+## <a name="clients"></a> Clients
 
 The **Deps** section defines configuration of the client dependencies to external microservices. 
 However, if microservice doesn't have any dependencies this section should be omitted entirely or kept empty.
 
 This is an optional section and can be omitted in the configuration.
 
-## <a name="ctrl"></a> Ctrl
+## <a name="controllers"></a> Controllers
 
 The **Ctrl** section defines configuration of the microservice business logic controller. 
 Based on the needs of the application, this section gives the ability to replace 
@@ -263,20 +296,20 @@ the standard business logic controller with a custom implementation.
 
 This is an optional section and can be omitted in the configuration.
 
-## <a name="ints"></a> Ints
+## <a name="decorators"></a> Decorators
 
 The Ints section defines configuration of custom interceptors to the microservice business logic. They decorate the controller 
 and modify its behavior by intercepting calls before and after the invocation. 
 
 This is an optional section and can be omitted in the configuration.
 
-## <a name="api"></a> Api
+## <a name="services"></a> Services
 
 The **Api** section defines configuration of the microservice services (also called endpoints) to provide API for the consumers. 
 Each microservice can expose multiple APIs (HTTP/REST or Seneca) and multiple versions of the same API type.
 At least one API service is required for the microservice to initialize successfully.
 
-### <a name="api_rest"></a> Rest
+### <a name="service_rest"></a> Rest Service
 
 HTTP/REST API has the following configuration properties:
 - type: 'rest' - type that designates HTTP/REST API
@@ -309,7 +342,7 @@ Example:
 }
 ```
 
-### <a name="api_seneca"></a> Seneca
+### <a name="service_seneca"></a> Seneca
 
 Seneca API for Node.js has the following configuration properties:
 - type: 'seneca' - type that designates Seneca API
