@@ -1,4 +1,4 @@
-# Pip.Services - an open-source library of reusable microservices
+# Pip.Services library of reusable microservices
 
 Microservices architectural style is quickly becoming popular among software developers.
 But variety of languages, platforms and frameworks, as well as lack of standards
