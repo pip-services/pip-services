@@ -61,6 +61,7 @@ the following configuration sections:
 - **config** – configurator configuration section (only used by in distributed configuration scenarios)
 - **logs** – logger configuration section
 - **counters** – performance counters configuration section
+- **cache** - data cache configurations section
 - **persistence** – data access configuration section
 - **clients** – configuration section for external client dependencies
 - **controllers** – business logic controller configuration section
