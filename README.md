@@ -1,8 +1,8 @@
 <div>
-  <img src="https://github.com/pip-services/pip-services/blob/master/design/Logo.png" alt="Pip.Services Logo" style="display:block;">
+  <img src="https://github.com/pip-services/pip-services/blob/master/design/Logo.png" alt="Pip.Services Logo" style="width:300px;display:block;align:center">
 </div>
 
-# Pip.Services library of reusable microservices
+# Library of reusable microservices
 
 Microservices architectural style is quickly becoming popular among software developers.
 But variety of languages, platforms and frameworks, as well as lack of standards

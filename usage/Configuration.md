@@ -99,7 +99,7 @@ Service and client components specified by group, type and version
 {
     ...
     "clients": {
-        "descriptor: {
+        "descriptor": {
             "group": "pip-services-storage",
             "type": "seneca",
             "version": "1.0"
@@ -107,7 +107,7 @@ Service and client components specified by group, type and version
         ...
     },
     "services": {
-        "descriptor: {
+        "descriptor": {
             "group": "pip-services-announces",
             "type": "rest",
             "version": "1.0"
