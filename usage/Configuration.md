@@ -309,7 +309,7 @@ by [pip-services-logging](https://github.com/pip-services/pip-services-logging) 
 
 - **descriptor**
   - **group**: "pip-services-runtime-logs"
-  - **type**: "console"
+  - **type**: "rest"
   - **version**: "*"
 - **options**
   - **level**: string - log level: fatal, error, warn, info, debug, trace. (Default: error)
@@ -321,94 +321,102 @@ by [pip-services-logging](https://github.com/pip-services/pip-services-logging) 
 
 ## <a name="counters"></a> Counters
 
-The **Counters** section defines configuration of the microservice performance counters component. 
-Based on the needs of the application, performances counters can be configured to output to different locations:
-- **null**: disable performance counters completely
-- **log**: output performance counters to a log
-- **remote**: output performance counters to a remote monitoring service
+Performance counters allow to collect metrics that show non-functional characteristics of microservice performance:
+number of calls, call execution time, number of objects in cache, last recorded value or last transaction time and more.
 
-Example to disable counters:
-```javascript
-{
-    ...
-    "counters": {
-        "type": "null" // Disable counters
-    } 
-    ...
-}
-```
+### <a name="counters-null"></a> Null Counters
 
-Example to output counters to log:
-```javascript
-{
-    ...
-    "counters": {
-        "type": "log"
-    } 
-    ...
-}
-```
- 
-Example to send performance metrics to remote server 
-```javascript
-{
-    ...
-    "counters": {
-        "type": "remote",
-        "transport": {
-            "type": "rest",
-            "host": "log.mydomain.com",
-            "port": "8022"
-        }
-    } 
-    ...
-}
-```
+Performance counters that doesn't do anything
 
-This is an optional section and can be omitted in the configuration.
+- **descriptor**
+  - **group**: "pip-services-runtime-counters"
+  - **type**: "null"
+  - **version**: "*"
+
+### <a name="counters-log"></a> Log Counters
+
+Performance counters that periodically outputs performance counters to log.
+The output interval is determined by **timeout** configuration parameter
+
+- **descriptor**
+  - **group**: "pip-services-runtime-counters"
+  - **type**: "log"
+  - **version**: "*"
+- **options**
+  - **timeout**: number - output time interval in milliseconds (default: 60000 msec / 1 min)
+
+### <a name="counters-rest"></a> REST Counters
+
+Performance counters that sends counter values to distributed service implemented 
+by [pip-services-counters](https://github.com/pip-services/pip-services-counters) microservice
+
+- **descriptor**
+  - **group**: "pip-services-runtime-counters"
+  - **type**: "rest"
+  - **version**: "*"
+- **options**
+  - **timeout**: number - output time interval in milliseconds (default: 60000 msec / 1 min)
+- **endpoint** or **endpoints**
+  - **discover** - service name to lookup at discovery service
+  - **protocol** - connection protocol. Supported protocols: http or https
+  - **host** - host name
+  - **port** - port name
 
 ## <a name="persistence"></a> Persistence
 
-The **Db** section defines configuration of the microservice data access component. The current microservices support 
-two types of persistence: flat files or MongoDB. Flat files are great for development and testing, 
-while MongoDB is a good option with outstanding performance and scalability, suitable for demanding production installations. 
-You can choose and configure the option that suits your needs.
+Persistence components are specific to every microservice. You need to refer to microservice configuration
+guide for more details. However, all microservices in Pip.Services follow similar configuration structure.
+
+### <a name="persistence_memory"></a> In-Memory Persistence
+
+In-memory persistence is used exclusively during testing to speedup tests and minimize their configuration.
+
+- **descriptor**
+  - **group**: string - persistence logical group (refer to microservice documentation)
+  - **type**: "memory"
+  - **version**: "*"
 
 ### <a name="persistence_file"></a> File Persistence
 
-Flat file persistence has the following configuration properties:
-- type: 'file' - type that designates flat file persistence
-- path: string - file path where data is stored. The object are written into the file in JSON format.
-- data: Object[] - (optional) array of data objects which is used to initialize the dataset. This option is only used in testing to set a known state on test start.
+Storing data in flat files is used mostly in development and testing. In some situation is can be used in simple 
+microservice deployments. Use it for your own risk since that option doesn't have any failover or redundancy. 
 
-Example:
-```javascript
-{
-    ...
-    "db": {
-        "type": "file",
-        "path": "xyz.json",
-        "data": []
-    }
-    ...
-}
-```
+- **descriptor**
+  - **group**: string - persistence logical group (refer to microservice documentation)
+  - **type**: "file"
+  - **version**: "*"
+- **options**
+  - **path**: string - file path where data is stored
+  - **data**: array - initial data (used in testing)
 
 ### <a name="persistence_mongodb"></a> MongoDB Persistence
 
-MongoDB persistence has the following configuration properties:
-- type: 'mongodb' - type that designates mongodb persistence
-- uri: string - MongoDB connection uri formatted as: 'mongodb://[&lt;user&gt;[:&lt;password&gt;]]&lt;host&gt;[:&lt;port&gt;]/&lt;database&gt;' 
-- options: object - (optional) MongoDB connection options. See: http://mongoosejs.com/docs/connections.html for more details.
-- debug: boolean - (optional) Enables or disables connection debugging
+MongoDB is a very popular NoSQL document-oriented database. It is a perfect choice for microservices
+since it doesn't require initial schema definition. You can point your microservice to an empty MongoDB database
+and it will create all tables on the fly. Horizontal scalability allows to achieve exceptional scale and performance.
+
+- **descriptor**
+  - **group**: string - persistence logical group (refer to microservice documentation)
+  - **type**: "mongodb"
+  - **version**: "*"
+- **connection**
+  - **uri** - MongoDB connection uri formatted as: 'mongodb://[&lt;user&gt;[:&lt;password&gt;]]&lt;host&gt;[:&lt;port&gt;]/&lt;database&gt;'
+- **options**
+  - **...** - MongoDB connection options. See: http://mongoosejs.com/docs/connections.html for more details.
+  - **debug**: boolean - (optional) Enables or disables connection debugging
 
 Example:
 ```javascript
 {
     ...
-    "db": {
-        "type": "mongodb",
-        "uri": "mongodb://localhost/pipservicestest",
+    "persistence": {
+        "descriptor": {
+            "group": "pip-services-announces",
+            "type": "mongodb"
+        },
+        "connection": {
+            "uri": "mongodb://localhost/pipservicestest"
+        },
         "options": {
             "server": {
                 "poolSize": 4,
@@ -417,9 +425,9 @@ Example:
                     "connectTimeoutMS": 5000
                 },
                 "auto_reconnect": true
-            }
-        },
-        "debug": false        
+            },
+            "debug": false        
+        }
     }
     ...
 }
@@ -427,14 +435,14 @@ Example:
 
 ## <a name="clients"></a> Clients
 
-The **Deps** section defines configuration of the client dependencies to external microservices. 
+The **Clients** section defines configuration of the client dependencies to external microservices. 
 However, if microservice doesn't have any dependencies this section should be omitted entirely or kept empty.
 
 This is an optional section and can be omitted in the configuration.
 
 ## <a name="controllers"></a> Controllers
 
-The **Ctrl** section defines configuration of the microservice business logic controller. 
+The **Controllers** section defines configuration of the microservice business logic controller. 
 Based on the needs of the application, this section gives the ability to replace 
 the standard business logic controller with a custom implementation.
 
@@ -442,14 +450,14 @@ This is an optional section and can be omitted in the configuration.
 
 ## <a name="decorators"></a> Decorators
 
-The Ints section defines configuration of custom interceptors to the microservice business logic. They decorate the controller 
-and modify its behavior by intercepting calls before and after the invocation. 
+The **Decorators** section defines configuration of custom interceptors to the microservice business logic. 
+They decorate the controller and modify its behavior by intercepting calls before and after the invocation. 
 
 This is an optional section and can be omitted in the configuration.
 
 ## <a name="services"></a> Services
 
-The **Api** section defines configuration of the microservice services (also called endpoints) to provide API for the consumers. 
+The **Services** section defines configuration of the microservice services (also called endpoints) to provide API for the consumers. 
 Each microservice can expose multiple APIs (HTTP/REST or Seneca) and multiple versions of the same API type.
 At least one API service is required for the microservice to initialize successfully.
 

@@ -16,7 +16,7 @@ microservices on virtually any platform and use them from any programming langua
 
 That level of flexibility becomes possible due to [componentized microservice architecture](design/Architecture.md).
 You can simply take a microservice, pick the necessary components for persistence, logging, caching, discovery, 
-performance counters, service endpoints and client connectors and describe it in a [simple configuration](usage/Configuration.md).
+performance counters, service endpoints and client connectors and describe it in [microservice configuration](usage/Configuration.md).
 After that microservice is ready to be deployed in the target development or production environments.
 
 <div style="border: 1px solid #ccc">
