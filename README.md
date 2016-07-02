@@ -85,6 +85,14 @@ for search within applications.
 - [pip-services-quotes](https://github.com/pip-services/pip-services-quotes) - Inspirational quotes microservice. 
 It is a basic sample microservice that shows to users inspiring quotes.
 
+### Microservice runtime implementation
+
+- [pip-services-runtime-node](https://github.com/pip-services/pip-services-runtime-node) - microservice runtime for Node.js
+- [pip-services-runtime-java](https://github.com/pip-services/pip-services-runtime-java) - microservice runtime for Java
+- [pip-services-runtime-dotnet](https://github.com/pip-services/pip-services-runtime-dotnet) - microservice runtime for .NET
+- [pip-services-runtime-go](https://github.com/pip-services/pip-services-runtime-go) - microservice runtime for Golang
+- [pip-services-runtime-python](https://github.com/pip-services/pip-services-runtime-python) - microservice runtime for Python
+
 ## Quick Links
 
 - [Official Pip.Services website](http://www.pipservices.org)
