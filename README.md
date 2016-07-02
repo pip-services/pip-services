@@ -19,7 +19,11 @@ You can simply take a microservice, pick necessary components for persistence, l
 service endpoints and client connectors and describe it in a [simple configuration](usage/Configuration.md).
 After that microservice is ready to be deployed in various development or production environments.
 
-Here is a list of options you can choose from. Specific microservice may or may not have all of them.
+<div style="border: 1px solid #ccc">
+  <img src="https://github.com/pip-services/pip-services/blob/master/design/Overview.png" alt="Pip.Services Overview" style="display:block;">
+</div>
+
+Below you can see the list of options you can choose from. Specific microservice may or may not have all of them.
 Please, refer to the microservice documentation for details.
 
 - **Languages**: Java, .NET, Node.js, Go. Python and Ruby are planned to be added in the future
