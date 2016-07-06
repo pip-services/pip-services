@@ -16,7 +16,7 @@ At the top level it is broken down into individual configuration sections:
 
 - [**factories**](#factories) – component factories
 - [**discovery**](#discovery) - service discovery configuration section
-- [**config**](#config) – configurator configuration section (only used by in distributed configuration scenarios)
+- [**boot**](#boot) – configurator configuration section (only used by in distributed configuration scenarios)
 - [**logs**](#logs) – logger configuration section
 - [**counters**](#counters) – performance counters configuration section
 - [**cache**](#cache) - data cache configurations section
@@ -37,7 +37,7 @@ Component configuration has the following structure:
 - **connection** - database or service connection properties
   - **uri** - connection uri
   - **host** - host name
-  - **port** - port name
+  - **port** - port number
   - **user** - user name
   - **password** - user password
   - **...** - custom properties
@@ -45,7 +45,7 @@ Component configuration has the following structure:
   - **discover** - service name to lookup at discovery service
   - **protocol** - connection protocol
   - **host** - host name
-  - **port** - port name
+  - **port** - port number
   - **user** - user name
   - **password** - user password
   - **...** - custom properties
@@ -130,7 +130,6 @@ Service and client components specified by group, type and version
             "level": 10
         }
     },
-    
     "counters": {
         "descriptor": {
             "type": "log"
@@ -139,7 +138,6 @@ Service and client components specified by group, type and version
             "timeout": 10000
         }
     },
-
     "persistence": {
         "descriptor": {
             "group": "pip-services-announces",            
@@ -160,7 +158,6 @@ Service and client components specified by group, type and version
             "debug": false        
         }
     },
-
     "controllers": {
         "descriptor": {
             "group": "pip-services-announces"            
@@ -169,7 +166,6 @@ Service and client components specified by group, type and version
             "maxTagCount": 1000
         }
     },
-
     "clients": [
         {
             "descriptor": {
@@ -184,7 +180,6 @@ Service and client components specified by group, type and version
             }
         }
     ],
-
     "services": [
         {
             "descriptor": {
@@ -229,47 +224,47 @@ client discovery mechanisms.
 
 TBD...
 
-## <a name="config"></a> Config
+## <a name="boot"></a> Boot
 
 In certain situations is it better to keep component configurations in centralized configuration repository
-and retrieve the latest configuration during microservice bootstrap process. **Config** section is optional.
-It may contain configuration of a **ConfigReader** component to retrieve configuration from the external repository.
+and retrieve the latest configuration during microservice bootstrap process. **Boot** section is optional.
+It may contain configuration of a **BootConfig** component to retrieve configuration from the external repository.
 
 The configuration is located in configuration repository by unique key. After retrival, it is added (or replaces) 
 the initial configuration and bootstrap process continues.
 
-### <a name="config-file"></a> File Config
+### <a name="boot-file"></a> File Boot Config
 
 The simplest configuration component that reads configuration from external file.
 
 - **descriptor**
-  - **group**: "pip-services-runtime-config"
+  - **group**: "pip-services-runtime-boot"
   - **type**: "file"
   - **version**: "*"
 - **options**
   - **path**: string - path to the configuration file
 
-### <a name="config-remote"></a> REST Config
+### <a name="boot-remote"></a> REST Boot Config
 
-The configuration component that reads configuration from distributed configuration
+The configuration component that reads configuration from remove configuration
 repository implemented by [pip-services-config](https://github.com/pip-services/pip-services-config) microservice
 
 - **descriptor**
-  - **group**: "pip-services-runtime-config"
+  - **group**: "pip-services-runtime-boot"
   - **type**: "rest"
   - **version**: "1.0"
 - **endpoint** or **endpoints**
   - **discover** - service name to lookup at discovery service
   - **protocol** - connection protocol. Supported protocols: http or https
   - **host** - host name
-  - **port** - port name
+  - **port** - port number
 - **options**
   - **key** - unique key of microservice config to be retrieved
 
 ## <a name="logs"></a> Logs
 
 Logs section defines logger components that capture log output from other microservice components
-that can be used for monitoring and troubleshooting. Microservice may contain more then one logger.
+to record and use it for monitoring and troubleshooting. Microservice configuration may contain more then one logger.
 
 Loggers are able to filter output messages using log level
 - **fatal** - outputs only critical errors that cause microservice to crash
@@ -281,7 +276,7 @@ Loggers are able to filter output messages using log level
 
 ### <a name="logs-null"></a> Null Logs
 
-Logger that doesn't do anything
+Logger component that doesn't do anything
 
 - **descriptor**
   - **group**: "pip-services-runtime-logs"
@@ -292,8 +287,8 @@ Logger that doesn't do anything
 
 ### <a name="logs-console"></a> Console Logs
 
-Logger that formats and writes log messages to console. 
-Errors go into Stderr stream, while all other messages are wrote to Stdout stream
+Logger component that writes log messages to console. 
+Errors go into Stderr stream, and all other messages are wrote to Stdout stream
 
 - **descriptor**
   - **group**: "pip-services-runtime-logs"
@@ -304,7 +299,7 @@ Errors go into Stderr stream, while all other messages are wrote to Stdout strea
 
 ### <a name="logs-rest"></a> REST Logs
 
-Logger that sends log messages to distributed log service implemented 
+Logger component that sends log messages to remote log service implemented 
 by [pip-services-logging](https://github.com/pip-services/pip-services-logging) microservice
 
 - **descriptor**
@@ -317,7 +312,7 @@ by [pip-services-logging](https://github.com/pip-services/pip-services-logging) 
   - **discover** - service name to lookup at discovery service
   - **protocol** - connection protocol. Supported protocols: http or https
   - **host** - host name
-  - **port** - port name
+  - **port** - port number
 
 ## <a name="counters"></a> Counters
 
@@ -335,7 +330,7 @@ Performance counters that doesn't do anything
 
 ### <a name="counters-log"></a> Log Counters
 
-Performance counters that periodically outputs performance counters to log.
+Performance counters component that periodically dumps performance counters to log.
 The output interval is determined by **timeout** configuration parameter
 
 - **descriptor**
@@ -347,8 +342,8 @@ The output interval is determined by **timeout** configuration parameter
 
 ### <a name="counters-rest"></a> REST Counters
 
-Performance counters that sends counter values to distributed service implemented 
-by [pip-services-counters](https://github.com/pip-services/pip-services-counters) microservice
+Performance counters component that sends counter values to remote performance monitoring service 
+implemented by [pip-services-counters](https://github.com/pip-services/pip-services-counters) microservice
 
 - **descriptor**
   - **group**: "pip-services-runtime-counters"
@@ -360,12 +355,71 @@ by [pip-services-counters](https://github.com/pip-services/pip-services-counters
   - **discover** - service name to lookup at discovery service
   - **protocol** - connection protocol. Supported protocols: http or https
   - **host** - host name
-  - **port** - port name
+  - **port** - port number
+
+## <a name="cache"></a> Cache
+
+Caching components allow to store data for quick access to avoid slow calls to persistence layer.
+
+All caches have limit to number of stored objects and expiration timeout. After that timeout, or when
+cache grows too much cached objects can be disposed. In that case cache returns **null** and business logic
+shall retrieve the data from persistence.
+
+If it up to controller implementation to use the cache. When cache is not specified, controller 
+will fall back to always use persistence cache.
+
+Remember: using local cache implementations in distributed scenarios will cause hard to cache errors.
+Cache is a great performance improvement mechanism, but it shall be used with great caution.
+
+### <a name="cache-null"></a> Null Cache
+
+Cache that doesn't do anything. It always returns **null** like objects are not stored in the cache.
+
+- **descriptor**
+  - **group**: "pip-services-runtime-cache"
+  - **type**: "null"
+  - **version**: "*"
+
+### <a name="cache-memory"></a> In-Memory Cache
+
+Local in-memory cache that can be used in development, testing and non-scalable deployments when only
+one microservice instance works.
+
+- **descriptor**
+  - **group**: "pip-services-runtime-counters"
+  - **type**: "memory"
+  - **version**: "*"
+- **options**
+  - **timeout**: number - expiration time interval in milliseconds (default: 60000 msec / 1 min)
+  - **maxSize**: number - maximum number of objects stored in the cache (default: 1000)
+
+### <a name="cache-memcached"></a> Memcached Cache
+
+Cache component that stores data in popular [memcached service](https://memcached.org).
+Memcached is a proven and highly reliable distributed cache implementation used in many
+highly scalable production deployment.
+
+- **descriptor**
+  - **group**: "pip-services-runtime-counters"
+  - **type**: "memcached"
+  - **version**: "*"
+- **endpoint** or **endpoints**
+  - **uri** - server uri like 'localhost:11211'
+- **options**
+  - **timeout**: number - expiration time interval in milliseconds (default: 60000 msec / 1 min)
+  - **retries**: number - number of retry attempts (default: 2)
+  - **failover**: boolean - **true** to enable automatic failover to another service
+  - **failoverTimeout**: number - timeout in seconds to initiate failover (default: 60)
 
 ## <a name="persistence"></a> Persistence
 
-Persistence components are specific to every microservice. You need to refer to microservice configuration
-guide for more details. However, all microservices in Pip.Services follow similar configuration structure.
+Persistence components implement microservice-specific data access to store and retrieve persistent data.
+They may use different storages: flat files, relational or NoSQL databases or specialized services.
+Typical persistence components do not contain business logic that modifies persistent data.
+But they may perform on-the-fly data conversions from old versions to the current one to ensure 
+backward compatibility  and zero data migration.
+
+Please, refer to configuration guide from particular microservice for specific parameters. 
 
 ### <a name="persistence_memory"></a> In-Memory Persistence
 
@@ -405,132 +459,172 @@ and it will create all tables on the fly. Horizontal scalability allows to achie
   - **...** - MongoDB connection options. See: http://mongoosejs.com/docs/connections.html for more details.
   - **debug**: boolean - (optional) Enables or disables connection debugging
 
-Example:
-```javascript
-{
-    ...
-    "persistence": {
-        "descriptor": {
-            "group": "pip-services-announces",
-            "type": "mongodb"
-        },
-        "connection": {
-            "uri": "mongodb://localhost/pipservicestest"
-        },
-        "options": {
-            "server": {
-                "poolSize": 4,
-                "socketOptions": {
-                    "keepAlive": 1,
-                    "connectTimeoutMS": 5000
-                },
-                "auto_reconnect": true
-            },
-            "debug": false        
-        }
-    }
-    ...
-}
-```
-
 ## <a name="clients"></a> Clients
 
-The **Clients** section defines configuration of the client dependencies to external microservices. 
-However, if microservice doesn't have any dependencies this section should be omitted entirely or kept empty.
+Clients components allow microservice business logic to connect to other microservices and call their operations. 
+Please, refer to configuration guide from particular microservice for specific parameters. 
 
-This is an optional section and can be omitted in the configuration.
+### <a name="clients_rest"></a> Direct Client
+
+Connects to microservice hosted within the same microservice container using direct functional call. 
+
+- **descriptor**
+  - **group**: string - client logical group (refer to microservice documentation)
+  - **type**: "rest"
+  - **version**: string - client compatibility version
+- **options**
+  - **...** - client specific options
+
+### <a name="clients_rest"></a> REST Client
+
+Connects to external microservice via plain HTTP REST API. This is the most interperable synchronous communication 
+mechanism, which can be quite slow and may have faster and lighter alternatives. 
+
+- **descriptor**
+  - **group**: string - client logical group (refer to microservice documentation)
+  - **type**: "rest"
+  - **version**: string - client compatibility version
+- **endpoint** or **endpoints**
+  - **discover** - service name to lookup at discovery service
+  - **protocol** - connection protocol. Supported protocols: http or https
+  - **host** - host name
+  - **port** - port number
+- **options**
+  - **timeout**: number - communication timeout in milliseconds (default: 30,000)
+  - **...** - client specific options
+
+### <a name="clients_lambda"></a> AWS Lambda Client
+
+Connects to external microservice instantiated by AWS Lambda function using Amazon proprietary protocol. 
+
+- **descriptor**
+  - **group**: string - client logical group (refer to microservice documentation)
+  - **type**: "rest"
+  - **version**: string - client compatibility version
+- **endpoint** or **endpoints**
+  - **discover** - service name to lookup at discovery service
+  - **protocol**: "aws"
+  - **region**: string - AWS availability region like "us-east-1"
+  - **function**: string - unique function name or arn like "arn:aws:lambda:us-east-1:268549927901:function:pip-services-template-node"
+- **options**
+  - **accessKeyId**: string - AWS access key id
+  - **secretAccessKey**: string - AWS secret access key
+  - **timeout**: number - communication timeout in milliseconds (default: 30,000)
+  - **...** - client specific options
+
+### <a name="clients_seneca"></a> Seneca Client
+
+Connects to external microservice via [Seneca.js](http://www.senecajs.org). This communication method
+is specific to Node.js clients and services.
+
+- **descriptor**
+  - **group**: string - client logical group (refer to microservice documentation)
+  - **type**: "seneca"
+  - **version**: string - client compatibility version
+- **endpoint** or **endpoints**
+  - **discover** - service name to lookup at discovery service
+  - **protocol** - connection protocol. Supported protocols: tcp,http or https
+  - **host** - host name
+  - **port** - port number
+  - **...** - seneca specific properties (refer to seneca documentation at http://www.senecajs.org)
+- **options**
+  - **timeout**: number - communication timeout in milliseconds (default: 30,000)
+  - **...** - client specific options
 
 ## <a name="controllers"></a> Controllers
 
-The **Controllers** section defines configuration of the microservice business logic controller. 
-Based on the needs of the application, this section gives the ability to replace 
-the standard business logic controller with a custom implementation.
-
-This is an optional section and can be omitted in the configuration.
+Controllers components are the central part of any microservice. They handle client requests by implementing specific 
+business logic, reading and writing persistent data, calling other microservices and using cache to speedup data access. 
+Regular microservice has at least one controller. But some complex microservices may break down logic into multiple controllers. 
+Please, refer to configuration guide from particular microservice for specific parameters. 
 
 ## <a name="decorators"></a> Decorators
 
-The **Decorators** section defines configuration of custom interceptors to the microservice business logic. 
-They decorate the controller and modify its behavior by intercepting calls before and after the invocation. 
+Decorators alter standard controller behavior and inject custom business rules before, after or instead standard operations.
+Typical decorators shall intercept and override commands or/and reimplement business logic interface to ensure proper 
+call chain from clients to services and then via decorators to controllers. Also, quite often decorators use custom fields
+in data objects to store data that is not supported by the original microservice design.
 
-This is an optional section and can be omitted in the configuration.
+Using decorators usually require adding to component configuration corresponding factories that know how to create
+decorators of particular type. 
+
+Decorators are not the standard part of a microservice. If you are the creator of decorators, you are free to implement 
+any configuration parameters you need. Otherwise, refer to decorator documentation, source code or contact the author 
+to find out their configuration.
 
 ## <a name="services"></a> Services
 
-The **Services** section defines configuration of the microservice services (also called endpoints) to provide API for the consumers. 
-Each microservice can expose multiple APIs (HTTP/REST or Seneca) and multiple versions of the same API type.
-At least one API service is required for the microservice to initialize successfully.
+Services expose microservice API to external clients. All services have corresponding clients implemented 
+in different programming languages. But microservice users are free to implement communication protocols
+and call services directly without client SDK.
 
-### <a name="service_rest"></a> Rest Service
+It is required that all microservices in Pip.Services library must maintain older versions of released APIs.
+In that case, backward-compatible services are responsible to convert data from/to older format and call 
+appropriate operation in business logic.
 
-HTTP/REST API has the following configuration properties:
-- type: 'rest' - type that designates HTTP/REST API
-- version: int - API version (default is 1). Currently only version 1 is supported
-- transport: object - HTTP transport configuration options
-  - type: string - HTTP protocol - 'http' or 'https' (default is 'http')
-  - host: string - IP address/hostname binding (default is '0.0.0.0')
-  - port: number - HTTP port number
+### <a name="services_rest"></a> REST Service
 
-A detailed description of HTTP/REST protocol version 1 can be found [here](RestProtocolV1.md)
+Exponses plain HTTP REST API. This is the most interperable synchronous communication 
+mechanism, which can be quite slow and may have faster and lighter alternatives. 
 
-Example:
-```javascript
-{
-    ...
-    "api": [
-        ...
-        {
-            "type": "rest",
-            "version": 1,
-            "transport": {
-                "type": "http",
-                "host": "localhost",
-                "port": 8002
-            }
-        }
-        ...
-    ]
-    ...
-}
-```
+- **descriptor**
+  - **group**: string - service logical group (refer to microservice documentation)
+  - **type**: "rest"
+  - **version**: string - service compatibility version
+- **endpoint**
+  - **discover** - service name to register at discovery service
+  - **protocol** - connection protocol. Supported protocols: http or https
+  - **host** - host name (default: '0.0.0.0')
+  - **port** - port number
+- **options**
+  - **connectTimeout**: number - connection timeout in milliseconds (default: 30,000)
+  - **requestMaxSize**: number - maximum size of client requests (default: 1Mb)
+  - **...** - service specific options
 
-### <a name="service_seneca"></a> Seneca
+### <a name="services_seneca"></a> Seneca Service
 
-Seneca API for Node.js has the following configuration properties:
-- type: 'seneca' - type that designates Seneca API
-- version: int - API version (default is 1). Currently only version 1 is supported
-- transport: object - Seneca transport configuration options. See http://senecajs.org/api/ for details.
-  - type: string - Seneca transport type 
-  - host: string - IP address/hostname binding (default is '0.0.0.0')
-  - port: number - Seneca port number
+Exponses API via [Seneca.js](http://www.senecajs.org). This communication method
+is specific to Node.js clients and services.
 
-A detail description of Seneca protocol version 1 can be found [here](SenecaProtocolV1.md)
+Seneca service required SenecaAddon component. But if user forgets to include it into configuration,
+microservices will add it automatically.
 
-Example:
-```javascript
-{
-    ...
-    "api": [
-        ...
-        {
-            "type": "seneca",
-            "transport": {
-                "type": "tcp",
-                "host": "localhost",
-                "port": 8802
-            }
-        }
-        ...
-    ]
-    ...
-}
-```
+- **descriptor**
+  - **group**: string - service logical group (refer to microservice documentation)
+  - **type**: "seneca"
+  - **version**: string - service compatibility version
+- **endpoint** -  optional endpoint. It overrides endpoint configuration in SenecaAddon components
+  - **discover** - service name to register at discovery service
+  - **protocol** - connection protocol. Supported protocols: tcp, http or https
+  - **host** - host name
+  - **port** - port number
+  - **...** - seneca specific properties (refer to seneca documentation at http://www.senecajs.org)
+- **options**
+  - **...** - service specific options
 
 ## <a name="addons"></a> Addons
 
-The **Addons** section defines configuration of optional addon components. 
-Addon components can help to register new servers on microservice start, 
-send microservice usage stats to the Pip.Services team, or do accomplish custom tasks 
-that go beyond the standard microservice architecture.
+Addon components are not directly involve in microservice business transactions, but may provide additional functionality.
+Few examples of addon components include: Random shutdown (chaos monkey for resiliance testing), Usage metrics, Health status.
 
-This is an optional section and can be omitted in the configuration.
+You are free to use standard addons or extend microservice functionality with your custom addon components. 
+For custom addon components it is require to include into microservice configuration corresponding factory that knows
+how to create components of that type.
+
+### <a name="addons_seneca"></a> Seneca Addon
+
+When microservice contains more then one seneca service attempts to create more then one seneca instance may cause conflicts.
+To void that problem users shall include into microservice configuration Seneca Addon that keeps reference to seneca instance
+and shares it across all seneca services. It usually has configuration of seneca endpoint to keep services from conflicting 
+configurations. 
+
+- **descriptor**
+  - **group**: "pip-services-runtime-addons"
+  - **type**: "seneca"
+  - **version**: "*"
+- **endpoint** -  optional endpoint. It overrides endpoint configuration in SenecaAddon components
+  - **discover** - service name to register at discovery service
+  - **protocol** - connection protocol. Supported protocols: tcp, http or https
+  - **host** - host name
+  - **port** - port number
+  - **...** - seneca specific properties (refer to seneca documentation at http://www.senecajs.org)
