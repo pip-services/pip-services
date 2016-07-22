@@ -2,7 +2,7 @@
 
 All microservices from Pip.Services irrelevant to it's implementation language
 support identical configuration mechanism. When microservice runs it reads configuration
-from provided JSON or YAML configuration file and use it as a recipe to instantiate
+from provided YAML or JSON configuration file and use it as a recipe to instantiate
 and configure components. 
 
 The configuration allows to specify microservice behavioral parameters, type and connection
@@ -105,7 +105,7 @@ services:
 ...
 ```
 
-### Example of complete JSON configuration file
+### Example of complete YAML configuration file
 
 ```yaml
 logs:
