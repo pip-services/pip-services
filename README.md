@@ -100,8 +100,8 @@ It is a basic sample microservice that shows to users inspiring quotes.
 ## Quick Links
 
 - [Official Pip.Services website](http://www.pipservices.org)
-- [Users discussion forum]()
-- [Pip.Services team blog]()
+- [Pip.Services discussion forum](https://groups.google.com/forum/#!forum/pip-services)
+- [Pip.Services team blog](https://pip-services.blogspot.com/)
 
 ## Acknowledgements
 
