@@ -35,7 +35,7 @@ Component configuration has the following structure:
   - **type** – function type, such as: memory, file, mongodb, mysql, etc.
   - **version** - compatibility version if applicable
 - **connection** - database or service connection properties
-  - **uri** - connection uri
+  - **type** - connection type
   - **host** - host name
   - **port** - port number
   - **user** - user name
@@ -59,154 +59,122 @@ by one or few parameters: component category, logical group, functional type and
 Below you can see examples how descriptors are used in microservice configurations.
 
 Define console logger by type (group and version are skipped)
-```javascript
-{
-    ...
-    "loggers": {
-        "descriptor": {
-            "type": "console"
-        },
-        ...
-    }
+```yaml
+  ...
+  loggers:
+    # Console logger
+    - descriptor:
+          type: "console"
+      ...
 ```
 
 Persistence components specified by group and type (version is skipped)
-```javascript
-{
+```yaml
+...
+persistence:
+  # Storage blocks MondoDB persistence
+  - descriptor:
+        group: "pip-services-storage-blocks"
+        type: "mongodb"
     ...
-    "persistence": [
-        {
-            "descriptor": {
-                "group": "pip-services-storage-blocks",
-                "type": "mongodb"
-            },
-            ...
-        },
-        {
-            "descriptor": {
-                "group": "pip-services-storage-content",
-                "type": "aws3"
-            },
-            ...
-        }
-    ],
+  # Storage contant AWS S3 persistence
+  - descriptor:
+        group: "pip-services-storage-content"
+        type: "aws3"
     ...
-}
+...
 ```
 
 Service and client components specified by group, type and version
-```javascript
-{
+```yaml
+...
+clients:
+    # Storage seneca client v1.0
+  - descriptor:
+        group: "pip-services-storage"
+        type: "seneca"
+        version: "1.0"
     ...
-    "clients": {
-        "descriptor": {
-            "group": "pip-services-storage",
-            "type": "seneca",
-            "version": "1.0"
-        },
-        ...
-    },
-    "services": {
-        "descriptor": {
-            "group": "pip-services-announces",
-            "type": "rest",
-            "version": "1.0"
-        },
-        ...
-    },
+services:
+    # Announces REST service v1.0 
+  - descriptor:
+        group: "pip-services-announces"
+        type: "rest"
+        version: "1.0"
     ...
-}
+...
 ```
 
 ### Example of complete JSON configuration file
 
-```javascript
-{    
-    "logs": {
-        "descriptor": {
-            "type": "console"
-        },
-        "options": {
-            "level": 10
-        }
-    },
-    "counters": {
-        "descriptor": {
-            "type": "log"
-        },
-        "options": {
-            "timeout": 10000
-        }
-    },
-    "persistence": {
-        "descriptor": {
-            "group": "pip-services-announces",            
-            "type": "mongodb"
-        },
-        "connection": {
-            "uri": "mongodb://localhost/pipservicestest"
-        },
-        "options": {
-            "server": {
-                "poolSize": 4,
-                "socketOptions": {
-                    "keepAlive": 1,
-                    "connectTimeoutMS": 5000
-                },
-                "auto_reconnect": true
-            },
-            "debug": false        
-        }
-    },
-    "controllers": {
-        "descriptor": {
-            "group": "pip-services-announces"            
-        },
-        "options": {
-            "maxTagCount": 1000
-        }
-    },
-    "clients": [
-        {
-            "descriptor": {
-                "group": "pip-services-storage",            
-                "type": "rest",
-                "version": "1.0"
-            },
-            "endpoint": {
-                "type": "http",
-                "host": "localhost",
-                "port": 8010
-            }
-        }
-    ],
-    "services": [
-        {
-            "descriptor": {
-                "group": "pip-services-announces",            
-                "type": "seneca",
-                "version": "1.0"
-            },
-            "endpoint": {
-                "type": "tcp",
-                "host": "localhost",
-                "port": 8811
-            }
-        },
-        {
-            "descriptor": {
-                "group": "pip-services-announces",            
-                "type": "rest",
-                "version": "1.0"
-            },
-            "endpoint": {
-                "type": "http",
-                "host": "localhost",
-                "port": 8011
-            }
-        }
-    ]    
-}
+```yaml
+logs:
+    # Console logger
+  - descriptor:
+        type: "console"
+    options:
+        level: "trace"
+
+counters:
+    # Logging performance counters
+  - descriptor:
+        type: "log"
+    options:
+        timeout: 10000
+
+persistence:
+    # Announces mongodb persistence
+  - descriptor:
+        group: "pip-services-announces"            
+        type: "mongodb"
+    connection:
+        type: "mongodb"
+        host: "localhost"
+        database: "pipservicestest"
+    options:
+        server:
+            poolSize: 4
+            socketOptions:
+                keepAlive: 1
+                connectTimeoutMS: 5000
+            auto_reconnect: true
+        debug: false        
+
+controllers:
+    # Announces controller
+  - descriptor:
+        group: "pip-services-announces"            
+    options:
+        max_tag_count: 1000
+
+clients:
+    # Storage REST client v1.0
+  - descriptor:
+        group: "pip-services-storage"            
+        type: "rest"
+        version: "1.0"
+    endpoint:
+        type: "http"
+        host: "localhost"
+        port: 8010
+
+services:
+  - descriptor:
+        group: "pip-services-announces"            
+        type: "seneca"
+        version: "1.0"
+    endpoint:
+        type: "tcp"
+        host: "localhost"
+        port: 8811
+  - descriptor:
+        group: "pip-services-announces"            
+        type: "rest"
+        version: "1.0"
+    endpoint:
+        type: "http"
+        host: "localhost"
+        port: 8011
 ``` 
 
 ## <a name="factories"></a> Factories
@@ -391,7 +359,7 @@ one microservice instance works.
   - **version**: "*"
 - **options**
   - **timeout**: number - expiration time interval in milliseconds (default: 60000 msec / 1 min)
-  - **maxSize**: number - maximum number of objects stored in the cache (default: 1000)
+  - **max_size**: number - maximum number of objects stored in the cache (default: 1000)
 
 ### <a name="cache-memcached"></a> Memcached Cache
 
@@ -409,7 +377,7 @@ highly scalable production deployment.
   - **timeout**: number - expiration time interval in milliseconds (default: 60000 msec / 1 min)
   - **retries**: number - number of retry attempts (default: 2)
   - **failover**: boolean - **true** to enable automatic failover to another service
-  - **failoverTimeout**: number - timeout in seconds to initiate failover (default: 60)
+  - **failover_timeout**: number - timeout in seconds to initiate failover (default: 60)
 
 ## <a name="persistence"></a> Persistence
 
@@ -453,8 +421,12 @@ and it will create all tables on the fly. Horizontal scalability allows to achie
   - **group**: string - persistence logical group (refer to microservice documentation)
   - **type**: "mongodb"
   - **version**: "*"
-- **connection**
-  - **uri** - MongoDB connection uri formatted as: 'mongodb://[&lt;user&gt;[:&lt;password&gt;]]&lt;host&gt;[:&lt;port&gt;]/&lt;database&gt;'
+- **connection** or **connections**
+  - **type** - mongodb for now
+  - **host** - database host
+  - **port** - database port (default: 27017)
+  - **username** - username to authenticate
+  - **password** - user password to authenticate
 - **options**
   - **...** - MongoDB connection options. See: http://mongoosejs.com/docs/connections.html for more details.
   - **debug**: boolean - (optional) Enables or disables connection debugging
@@ -507,8 +479,8 @@ Connects to external microservice instantiated by AWS Lambda function using Amaz
   - **region**: string - AWS availability region like "us-east-1"
   - **function**: string - unique function name or arn like "arn:aws:lambda:us-east-1:268549927901:function:pip-services-template-node"
 - **options**
-  - **accessKeyId**: string - AWS access key id
-  - **secretAccessKey**: string - AWS secret access key
+  - **access_key_id**: string - AWS access key id
+  - **secret_access_key**: string - AWS secret access key
   - **timeout**: number - communication timeout in milliseconds (default: 30,000)
   - **...** - client specific options
 
@@ -577,8 +549,8 @@ mechanism, which can be quite slow and may have faster and lighter alternatives.
   - **host** - host name (default: '0.0.0.0')
   - **port** - port number
 - **options**
-  - **connectTimeout**: number - connection timeout in milliseconds (default: 30,000)
-  - **requestMaxSize**: number - maximum size of client requests (default: 1Mb)
+  - **connect_timeout**: number - connection timeout in milliseconds (default: 30,000)
+  - **request_max_size**: number - maximum size of client requests (default: 1Mb)
   - **...** - service specific options
 
 ### <a name="services_seneca"></a> Seneca Service
