@@ -1,4 +1,4 @@
-# Reference Architecture
+# Pip.Services Reference Architecture
 
 ## Overview
 
