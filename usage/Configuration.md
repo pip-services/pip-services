@@ -422,7 +422,7 @@ and it will create all tables on the fly. Horizontal scalability allows to achie
   - **type**: "mongodb"
   - **version**: "*"
 - **connection** or **connections**
-  - **type** - mongodb for now
+  - **type** - "mongodb" for now
   - **host** - database host
   - **port** - database port (default: 27017)
   - **username** - username to authenticate
