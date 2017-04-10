@@ -50,6 +50,8 @@ It logs key system events like installing a new server, upgrading to a newer ver
 and so on
 - [pip-services-registry](https://github.com/pip-services-infrastructure/pip-services-registry-node) - Registry microservice. 
 It keeps system-wide configuration settings split by sections.
+- [pip-services-statistics](https://github.com/pip-services-infrastructure/pip-services-statistics-node) - Statistics microservice. 
+It aggregates business statistics within Hour, Day, Month, Year and Total intervals.
 
 ### User management microservices
 - [pip-services-accounts](https://github.com/pip-services-users/pip-services-accounts-node) - Users account management microservice. 
