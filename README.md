@@ -90,6 +90,12 @@ It records tags used by user (or party) when they create their content. Later th
 for search within applications.
 - [pip-services-quotes](https://github.com/pip-services-content/pip-services-quotes-node) - Inspirational quotes microservice. 
 It is a basic sample microservice that shows to users inspiring quotes.
+- [pip-services-tips](https://github.com/pip-services-content/pip-services-tips-node) - User tips microservice. 
+It shows prerecorded useful tips and suggestions to application users.
+- [pip-services-guides](https://github.com/pip-services-content/pip-services-guides-node) - Application guides microservice. 
+It shows guides (introduction, walk-through, new release) to application users.
+- [pip-services-imagesets](https://github.com/pip-services-content/pip-services-imagesets-node) - Image library microservice. 
+It contains a collection of images that users can search and use to visualize their content.
 
 ### Microservice framework for .NET
 
