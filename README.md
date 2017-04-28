@@ -52,6 +52,8 @@ and so on
 It keeps system-wide configuration settings split by sections.
 - [pip-services-statistics](https://github.com/pip-services-infrastructure/pip-services-statistics-node) - Statistics microservice. 
 It aggregates business statistics within Hour, Day, Month, Year and Total intervals.
+- [pip-services-blobs](https://github.com/pip-services-infrastructure/pip-services-blobs-node) - Blob storage microservice. 
+It is the key microservice that enables upload and download of binary blobs. It also tracks references from other system entities and destroys files when the last reference is released.
 - [pip-services-facets](https://github.com/pip-services-infrastructure/pip-services-facets-node) - Faceted search microservice. 
 It records and allows to search by aggregated (faceted) criteria, like groups, types or categories.
 
@@ -83,8 +85,6 @@ It allows to collect feedback from product users about their issues, ideas, copy
 
 ### Content management microservices
 
-- [pip-services-blobs](https://github.com/pip-services-content/pip-services-blobs-node) - Blob storage microservice. 
-It is the key microservice that enables upload and download of binary blobs. It also tracks references from other system entities and destroys files when the last reference is released.
 - [pip-services-attachments](https://github.com/pip-services-content/pip-services-attachments-node) - Blob attachments microservice. 
 It tracks references to blobs from other system entities and destroys files when the last reference is released.
 - [pip-services-tags](https://github.com/pip-services-content/pip-services-tags-node) - User/party search tags microservice. 
@@ -100,6 +100,8 @@ It shows guides (introduction, walk-through, new release) to application users.
 It contains a collection of images that users can search and use to visualize their content.
 - [pip-services-files](https://github.com/pip-services-content/pip-services-files-node) - Files microservice. 
 It keeps collections (groups) of files. File content can be stored either in blobs or in external source and referenced via uri.
+- [pip-services-emailtemplate](https://github.com/pip-services-content/pip-services-emailtemplate-node) - Email templates microservice. 
+It allows content managers to compose email templates in multiple languages and later use to send out emails to system users or internet community.
 
 ### Microservice framework for .NET
 
