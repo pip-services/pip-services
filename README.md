@@ -52,6 +52,8 @@ and so on
 It keeps system-wide configuration settings split by sections.
 - [pip-services-statistics](https://github.com/pip-services-infrastructure/pip-services-statistics-node) - Statistics microservice. 
 It aggregates business statistics within Hour, Day, Month, Year and Total intervals.
+- [pip-services-facets](https://github.com/pip-services-infrastructure/pip-services-facets-node) - Faceted search microservice. 
+It records and allows to search by aggregated (faceted) criteria, like groups, types or categories.
 
 ### User management microservices
 - [pip-services-accounts](https://github.com/pip-services-users/pip-services-accounts-node) - Users account management microservice. 
@@ -96,6 +98,8 @@ It shows prerecorded useful tips and suggestions to application users.
 It shows guides (introduction, walk-through, new release) to application users.
 - [pip-services-imagesets](https://github.com/pip-services-content/pip-services-imagesets-node) - Image library microservice. 
 It contains a collection of images that users can search and use to visualize their content.
+- [pip-services-files](https://github.com/pip-services-content/pip-services-files-node) - Files microservice. 
+It keeps collections (groups) of files. File content can be stored either in blobs or in external source and referenced via uri.
 
 ### Microservice framework for .NET
 
