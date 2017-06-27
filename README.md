@@ -48,7 +48,7 @@ It is a lightweight alternative to production services like Consul or Etcd that 
 - [pip-services-eventlog](https://github.com/pip-services-infrastructure/pip-services-eventlog-node) - System event logging microservice. 
 It logs key system events like installing a new server, upgrading to a newer version, shutting down system for maintenance
 and so on
-- [pip-services-registry](https://github.com/pip-services-infrastructure/pip-services-registry-node) - Registry microservice. 
+- [pip-services-settings](https://github.com/pip-services-infrastructure/pip-services-settings-node) - Settings microservice. 
 It keeps system-wide configuration settings split by sections.
 - [pip-services-statistics](https://github.com/pip-services-infrastructure/pip-services-statistics-node) - Statistics microservice. 
 It aggregates business statistics within Hour, Day, Month, Year and Total intervals.
@@ -102,6 +102,8 @@ It contains a collection of images that users can search and use to visualize th
 It keeps collections (groups) of files. File content can be stored either in blobs or in external source and referenced via uri.
 - [pip-services-emailtemplate](https://github.com/pip-services-content/pip-services-emailtemplate-node) - Email templates microservice. 
 It allows content managers to compose email templates in multiple languages and later use to send out emails to system users or internet community.
+- [pip-services-dashboards](https://github.com/pip-services-content/pip-services-dashboards-node) - Dashboards microservice. 
+It stores configurations of user dashboards.
 
 ### Microservice framework for .NET
 
