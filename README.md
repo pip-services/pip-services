@@ -107,7 +107,7 @@ It shows guides (introduction, walk-through, new release) to application users.
 It contains a collection of images that users can search and use to visualize their content.
 - [pip-services-files](https://github.com/pip-services-content/pip-services-files-node) - Files microservice. 
 It keeps collections (groups) of files. File content can be stored either in blobs or in external source and referenced via uri.
-- [pip-services-msgtemplate](https://github.com/pip-services-content/pip-services-msgtemplate-node) - Message templates microservice. 
+- [pip-services-msgtemplates](https://github.com/pip-services-content/pip-services-msgtemplates-node) - Message templates microservice. 
 It allows content managers to compose message templates in multiple languages and later use to send out emails or sms to system users or internet community.
 - [pip-services-dashboards](https://github.com/pip-services-content/pip-services-dashboards-node) - Dashboards microservice. 
 It stores configurations of user dashboards.
