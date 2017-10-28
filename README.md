@@ -56,6 +56,10 @@ It aggregates business statistics within Hour, Day, Month, Year and Total interv
 It is the key microservice that enables upload and download of binary blobs. It also tracks references from other system entities and destroys files when the last reference is released.
 - [pip-services-facets](https://github.com/pip-services-infrastructure/pip-services-facets-node) - Faceted search microservice. 
 It records and allows to search by aggregated (faceted) criteria, like groups, types or categories.
+- [pip-services-changescopes](https://github.com/pip-services-infrastructure/pip-services-changescopes-node) - Change scopes microservice.
+It trackes changes in specific scope down to individual elements. That helps to use simple pulls to detect changes in one call without use of asynchronous update messages.
+- [pip-services-emaildelivery](https://github.com/pip-services-infrastructure/pip-services-emaildelivery-node) - Email delivery microservice. It sends email messages and supports message templates.
+- [pip-services-smsdelivery](https://github.com/pip-services-infrastructure/pip-services-smsdelivery-node) - SMS delivery microservice. It sends sms messages and supports message templates.
 
 ### User management microservices
 - [pip-services-accounts](https://github.com/pip-services-users/pip-services-accounts-node) - Users account management microservice. 
@@ -65,9 +69,12 @@ It allows to set and manage user password, performs basic login/password based a
 recovery via email.
 - [pip-services-roles](https://github.com/pip-services-users/pip-services-roles-node) - User role-based authorization microservice. 
 It allows to grant roles to a user and performs basic ‘is user in role’ authorization.
-- [pip-services-email](https://github.com/pip-services-users/pip-services-email-node) - Email sending microservice. 
-It manages user primary emails, handles email verification, sends emails to destination addresses or to specified users. 
-Email content can be templated.
+- [pip-services-emailsettings](https://github.com/pip-services-users/pip-services-emailsettings-node) - Email settings microservice. 
+It manages user primary emails and handles email verification.
+- [pip-services-smssettings](https://github.com/pip-services-users/pip-services-smssettings-node) - SMS settings microservice. 
+It manages user phone numbers and handles phone verification.
+- [pip-services-msgdistribution](https://github.com/pip-services-users/pip-services-msgdistribution-node) - Message distribution microservice. 
+It distributes messages to one or many recipients via selected delivery method: email or sms.
 - [pip-services-sessions](https://github.com/pip-services-users/pip-services-sessions-node) - User session management microservice. 
 It tracks sessions opened by users from multiple hosts and applications. It can be very useful for session tracking 
 in client facades (API gateways).
@@ -100,8 +107,8 @@ It shows guides (introduction, walk-through, new release) to application users.
 It contains a collection of images that users can search and use to visualize their content.
 - [pip-services-files](https://github.com/pip-services-content/pip-services-files-node) - Files microservice. 
 It keeps collections (groups) of files. File content can be stored either in blobs or in external source and referenced via uri.
-- [pip-services-emailtemplate](https://github.com/pip-services-content/pip-services-emailtemplate-node) - Email templates microservice. 
-It allows content managers to compose email templates in multiple languages and later use to send out emails to system users or internet community.
+- [pip-services-msgtemplate](https://github.com/pip-services-content/pip-services-msgtemplate-node) - Message templates microservice. 
+It allows content managers to compose message templates in multiple languages and later use to send out emails or sms to system users or internet community.
 - [pip-services-dashboards](https://github.com/pip-services-content/pip-services-dashboards-node) - Dashboards microservice. 
 It stores configurations of user dashboards.
 
