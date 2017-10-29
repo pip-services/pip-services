@@ -58,8 +58,8 @@ It is the key microservice that enables upload and download of binary blobs. It 
 It records and allows to search by aggregated (faceted) criteria, like groups, types or categories.
 - [pip-services-changescopes](https://github.com/pip-services-infrastructure/pip-services-changescopes-node) - Change scopes microservice.
 It trackes changes in specific scope down to individual elements. That helps to use simple pulls to detect changes in one call without use of asynchronous update messages.
-- [pip-services-emaildelivery](https://github.com/pip-services-infrastructure/pip-services-emaildelivery-node) - Email delivery microservice. It sends email messages and supports message templates.
-- [pip-services-smsdelivery](https://github.com/pip-services-infrastructure/pip-services-smsdelivery-node) - SMS delivery microservice. It sends sms messages and supports message templates.
+- [pip-services-email](https://github.com/pip-services-infrastructure/pip-services-email-node) - Email delivery microservice. It sends email messages and supports message templates.
+- [pip-services-sms](https://github.com/pip-services-infrastructure/pip-services-sms-node) - SMS delivery microservice. It sends sms messages and supports message templates.
 
 ### User management microservices
 - [pip-services-accounts](https://github.com/pip-services-users/pip-services-accounts-node) - Users account management microservice. 
