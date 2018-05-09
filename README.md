@@ -172,6 +172,7 @@ This project would not be possible without effort contributed by particular indi
 - **Sergey Seroukhov** - the project founder, microservice architecture and runtime implementation
 - **Mark Zontak** - Node.js and .NET implementations, AWS integration
 - **Volodymyr Tkachenko** - .NET implementation, Service Fabric and Docker deployments
+- **Alex Mazur** - .NET implementations, Azure integration
 - **Alex Masliev** - Website and graphics
 
 We also would like to recognize help received from the following companies.
@@ -180,3 +181,4 @@ We also would like to recognize help received from the following companies.
 - [**Modular Mining Systems Inc.**](http://www.mmsi.com)
 - [**BootBarn**](http://www.bootbarn.com)
 - [**EPAM**](http://www.epam.com)
+- [**Kyrio**](http://www.kyrio.com)
