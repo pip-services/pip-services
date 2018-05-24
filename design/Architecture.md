@@ -29,7 +29,7 @@ The architecture is implemented by pip-services-template project(s) and supporte
 The diagram below presents the structure of a typical microservice.
 
 <div style="border: 1px solid #ccc">
-  <img src="https://github.com/pip-services/pip-services/blob/master/design/ComponentizedArchitecture.png" alt="Pip.Services Componentized Architecture" style="display:block;">
+  <img src="https://github.com/pip-services/pip-services/blob/master/design/PipServices+Architecture.png" alt="Pip.Services Componentized Architecture" style="display:block;">
 </div>
 
 ### The key architectural components are the following:
