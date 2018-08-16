@@ -112,50 +112,75 @@ It allows content managers to compose message templates in multiple languages an
 - [pip-services-dashboards](https://github.com/pip-services-content/pip-services-dashboards-node) - Dashboards microservice. 
 It stores configurations of user dashboards.
 
-### Microservice framework for .NET
+### Microservice framework 3.0 for Core .NET
 
-- [pip-services-commons-dotnet](https://github.com/pip-services/pip-services-commons-dotnet) - basic portable abstractions in .NET
-- [pip-services-container-dotnet](https://github.com/pip-services/pip-services-container-dotnet) - IoC container .NET
-- [pip-services-data-dotnet](https://github.com/pip-services/pip-services-data-dotnet) - data processing and persistence in .NET
-- [pip-services-net-dotnet](https://github.com/pip-services/pip-services-net-dotnet) - synchronous and asynchronous communication in .NET
-- [pip-services-azure-dotnet](https://github.com/pip-services/pip-services-azure-dotnet) - Azure specific components in .NET
-- [pip-services-aws-dotnet](https://github.com/pip-services/pip-services-aws-dotnet) - AWS specific components for Pip.Services in .NET
-- [pip-services-oss-dotnet](https://github.com/pip-services/pip-services-oss-dotnet) - Open source components for Pip.Services in .NET
-- [pip-services-dotnet-ws](https://github.com/pip-services/pip-services-dotnet-ws) - Workspace for Pip.Services in .NET
+- [pip-services-commons-dotnet](https://github.com/pip-services-dotnet/pip-services-commons-dotnet) - common implementation patterns in .NET
+- [pip-services-components-dotnet](https://github.com/pip-services-dotnet/pip-services-components-dotnet) - common component definitions in .NET
+- [pip-services-container-dotnet](https://github.com/pip-services-dotnet/pip-services-container-dotnet) - Inversion of Control (IoC) container .NET
+- [pip-services-data-dotnet](https://github.com/pip-services-dotnet/pip-services-data-dotnet) - data processing and persistence in .NET
+- [pip-services-rpc-dotnet](https://github.com/pip-services-dotnet/pip-services-rpc-dotnet) - Remote procedure calls (RPC) in .NET
+- [pip-services-messaging-dotnet](https://github.com/pip-services-dotnet/pip-services-messaging-dotnet) - Asynchronous messaging in .NET
+- [pip-services-azure-dotnet](https://github.com/pip-services-dotnet/pip-services-azure-dotnet) - Azure specific components in .NET
+- [pip-services-aws-dotnet](https://github.com/pip-services-dotnet/pip-services-aws-dotnet) - AWS specific components in .NET
+- [pip-services-mongodb-dotnet](https://github.com/pip-services-dotnet/pip-services-mongodb-dotnet) - MongoDB components in .NET
+- [pip-services-elasticsearch-dotnet](https://github.com/pip-services-dotnet/pip-services-elasticsearch-dotnet) - ElasticSearch components in .NET
+- [pip-services-prometheus-dotnet](https://github.com/pip-services-dotnet/pip-services-prometheus-dotnet) - Prometheus components in .NET
+- [pip-services-memcached-dotnet](https://github.com/pip-services-dotnet/pip-services-memcached-dotnet) - Memcached components in .NET
+- [pip-services-redis-dotnet](https://github.com/pip-services-dotnet/pip-services-redis-dotnet) - Redis components in .NET
+- [pip-services-rabbitmq-dotnet](https://github.com/pip-services-dotnet/pip-services-rabbitmq-dotnet) - RabbitMQ queues in .NET
+- [pip-services-dotnet-ws](https://github.com/pip-services-dotnet/pip-services-dotnet-ws) - Workspace for Pip.Services in .NET
 
-### Microservice framework for Java
+### Microservice framework 3.0 for Java (Under development)
 
-- [pip-services-commons-java](https://github.com/pip-services/pip-services-commons-java) - basic portable abstractions in Java
-- [pip-services-container-java](https://github.com/pip-services/pip-services-container-java) - IoC container Java
-- [pip-services-data-java](https://github.com/pip-services/pip-services-data-java) - data processing and persistence in Java
-- [pip-services-net-java](https://github.com/pip-services/pip-services-net-java) - synchronous and asynchronous communication in Java
-- [pip-services-oss-java](https://github.com/pip-services/pip-services-oss-java) - Open source components for Pip.Services in Java
-- [pip-services-java-ws](https://github.com/pip-services/pip-services-java-ws) - Workspace for Pip.Services in Java
+- [pip-services-commons-java](https://github.com/pip-services-java/pip-services-commons-java) - common implementation patterns in Java
+- [pip-services-components-java](https://github.com/pip-services-java/pip-services-components-java) - common component definitions in Java
+- [pip-services-container-java](https://github.com/pip-services-java/pip-services-container-java) - Inversion of Control (IoC) container Java
+- [pip-services-data-java](https://github.com/pip-services-java/pip-services-data-java) - data processing and persistence in Java
+- [pip-services-rpc-java](https://github.com/pip-services-java/pip-services-rpc-java) - Remote procedure calls (RPC) in Java
+- [pip-services-messaging-java](https://github.com/pip-services-java/pip-services-messaging-java) - Asynchronous messaging in Java
+- [pip-services-mongodb-java](https://github.com/pip-services-java/pip-services-mongodb-java) - MongoDB components in Java
+- [pip-services-java-ws](https://github.com/pip-services-java/pip-services-java-ws) - Workspace for Pip.Services in Java
 
-### Microservice framework for Node.js
+### Microservice framework 3.0 for Node.js
 
-- [pip-services-commons-node](https://github.com/pip-services/pip-services-commons-node) - basic portable abstractions in Node.js
-- [pip-services-container-node](https://github.com/pip-services/pip-services-container-node) - IoC container Node.js
-- [pip-services-data-node](https://github.com/pip-services/pip-services-data-node) - data processing and persistence in Node.js
-- [pip-services-net-node](https://github.com/pip-services/pip-services-net-node) - synchronous and asynchronous communication in Node.js
-- [pip-services-aws-node](https://github.com/pip-services/pip-services-azure-node) - AWS specific components in Node.js
-- [pip-services-oss-node](https://github.com/pip-services/pip-services-oss-node) - Open source components for Pip.Services in Node.js
-- [pip-services-facade-node](https://github.com/pip-services/pip-services-facade-node) - RESTful Client Facade for Pip.Services in Node.js
-- [pip-services-node-ws](https://github.com/pip-services/pip-services-node-ws) - Workspace for Pip.Services in Node.js
+- [pip-services-commons-node](https://github.com/pip-services-node/pip-services-commons-node) - common implementation patterns in Node.js
+- [pip-services-components-node](https://github.com/pip-services-node/pip-services-components-node) - common component definitions in Node.js
+- [pip-services-container-node](https://github.com/pip-services-node/pip-services-container-node) - Inversion of Control (IoC) container Node.js
+- [pip-services-data-node](https://github.com/pip-services-node/pip-services-data-node) - data processing and persistence in Node.js
+- [pip-services-rpc-node](https://github.com/pip-services-node/pip-services-rpc-node) - Remote procedure calls (RPC) in Node.js
+- [pip-services-messaging-node](https://github.com/pip-services-node/pip-services-messaging-node) - Asynchronous messaging in Node.js
+- [pip-services-azure-node](https://github.com/pip-services-node/pip-services-azure-node) - Azure specific components in Node.js
+- [pip-services-aws-node](https://github.com/pip-services-node/pip-services-aws-node) - AWS specific components in Node.js
+- [pip-services-mongodb-node](https://github.com/pip-services-node/pip-services-mongodb-node) - MongoDB components in Node.js
+- [pip-services-elasticsearch-node](https://github.com/pip-services-node/pip-services-elasticsearch-node) - ElasticSearch components in Node.js
+- [pip-services-prometheus-node](https://github.com/pip-services-node/pip-services-prometheus-node) - Prometheus components in Node.js
+- [pip-services-memcached-node](https://github.com/pip-services-node/pip-services-memcached-node) - Memcached components in Node.js
+- [pip-services-redis-node](https://github.com/pip-services-node/pip-services-redis-node) - Redis components in Node.js
+- [pip-services-rabbitmq-node](https://github.com/pip-services-node/pip-services-rabbitmq-node) - RabbitMQ queues in Node.js
+- [pip-services-node-ws](https://github.com/pip-services-node/pip-services-node-ws) - Workspace for Pip.Services in Node.js
 
-### Microservice framework for Python
+### Microservice framework 3.0 for Python (Coming soon)
 
-- [pip-services-commons-python](https://github.com/pip-services/pip-services-commons-python) - basic portable abstractions in Python
-- [pip-services-container-python](https://github.com/pip-services/pip-services-container-python) - IoC container Python
-- [pip-services-data-python](https://github.com/pip-services/pip-services-data-python) - data processing and persistence in Python
-- [pip-services-net-python](https://github.com/pip-services/pip-services-net-python) - synchronous and asynchronous communication in Python
+- [pip-services-commons-python](https://github.com/pip-services-python/pip-services-commons-python) - common implementation patterns in Python
+- [pip-services-components-python](https://github.com/pip-services-python/pip-services-components-python) - common component definitions in Python
+- [pip-services-container-python](https://github.com/pip-services-python/pip-services-container-python) - Inversion of Control (IoC) container Python
+- [pip-services-data-python](https://github.com/pip-services-python/pip-services-data-python) - data processing and persistence in Python
+- [pip-services-rpc-python](https://github.com/pip-services-python/pip-services-rpc-python) - Remote procedure calls (RPC) in Python
+- [pip-services-messaging-python](https://github.com/pip-services-python/pip-services-messaging-python) - Asynchronous messaging in Python
+- [pip-services-mongodb-python](https://github.com/pip-services-python/pip-services-mongodb-python) - MongoDB components in Python
+- [pip-services-python-ws](https://github.com/pip-services-python/pip-services-python-ws) - Workspace for Pip.Services in Python
 
-### Microservice framework for Golang
+### Microservice framework 3.0 for Golang (Under development)
 
-- [pip-services-commons-go](https://github.com/pip-services/pip-services-commons-go) - basic portable abstractions in Go
-- [pip-services-container-go](https://github.com/pip-services/pip-services-container-dotnet) - IoC container Go
-- [pip-services-data-go](https://github.com/pip-services/pip-services-data-go) - data processing and persistence in Go
-- [pip-services-net-go](https://github.com/pip-services/pip-services-net-go) - synchronous and asynchronous communication in Go
+- [pip-services-commons-go](https://github.com/pip-services-go/pip-services-commons-go) - common implementation patterns in Golang
+- [pip-services-components-go](https://github.com/pip-services-go/pip-services-components-go) - common component definitions in Golang
+- [pip-services-container-go](https://github.com/pip-services-go/pip-services-container-go) - Inversion of Control (IoC) container Golang
+- [pip-services-data-go](https://github.com/pip-services-go/pip-services-data-go) - data processing and persistence in Golang
+- [pip-services-rpc-go](https://github.com/pip-services-go/pip-services-rpc-go) - Remote procedure calls (RPC) in Golang
+- [pip-services-messaging-go](https://github.com/pip-services-go/pip-services-messaging-go) - Asynchronous messaging in Golang
+- [pip-services-mongodb-go](https://github.com/pip-services-go/pip-services-mongodb-go) - MongoDB components in Golang
+- [pip-services-go-ws](https://github.com/pip-services-go/pip-services-go-ws) - Workspace for Pip.Services in Golang
+
 
 ### Portable build infrastructure
 
