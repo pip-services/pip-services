@@ -119,22 +119,29 @@ It stores configurations of user dashboards.
 - [pip-services-data-dotnet](https://github.com/pip-services/pip-services-data-dotnet) - data processing and persistence in .NET
 - [pip-services-net-dotnet](https://github.com/pip-services/pip-services-net-dotnet) - synchronous and asynchronous communication in .NET
 - [pip-services-azure-dotnet](https://github.com/pip-services/pip-services-azure-dotnet) - Azure specific components in .NET
+- [pip-services-aws-dotnet](https://github.com/pip-services/pip-services-aws-dotnet) - AWS specific components for Pip.Services in .NET
+- [pip-services-oss-dotnet](https://github.com/pip-services/pip-services-oss-dotnet) - Open source components for Pip.Services in .NET
+- [pip-services-dotnet-ws](https://github.com/pip-services/pip-services-dotnet-ws) - Workspace for Pip.Services in .NET
 
 ### Microservice framework for Java
 
 - [pip-services-commons-java](https://github.com/pip-services/pip-services-commons-java) - basic portable abstractions in Java
 - [pip-services-container-java](https://github.com/pip-services/pip-services-container-java) - IoC container Java
-- [pip-services-data-java](https://github.com/pip-services/pip-services-data-dotnet) - data processing and persistence in Java
+- [pip-services-data-java](https://github.com/pip-services/pip-services-data-java) - data processing and persistence in Java
 - [pip-services-net-java](https://github.com/pip-services/pip-services-net-java) - synchronous and asynchronous communication in Java
+- [pip-services-oss-java](https://github.com/pip-services/pip-services-oss-java) - Open source components for Pip.Services in Java
+- [pip-services-java-ws](https://github.com/pip-services/pip-services-java-ws) - Workspace for Pip.Services in Java
 
 ### Microservice framework for Node.js
 
 - [pip-services-commons-node](https://github.com/pip-services/pip-services-commons-node) - basic portable abstractions in Node.js
 - [pip-services-container-node](https://github.com/pip-services/pip-services-container-node) - IoC container Node.js
 - [pip-services-data-node](https://github.com/pip-services/pip-services-data-node) - data processing and persistence in Node.js
-- [pip-services-data-node](https://github.com/pip-services/pip-services-data-node) - data processing and persistence in .NET
 - [pip-services-net-node](https://github.com/pip-services/pip-services-net-node) - synchronous and asynchronous communication in Node.js
 - [pip-services-aws-node](https://github.com/pip-services/pip-services-azure-node) - AWS specific components in Node.js
+- [pip-services-oss-node](https://github.com/pip-services/pip-services-oss-node) - Open source components for Pip.Services in Node.js
+- [pip-services-facade-node](https://github.com/pip-services/pip-services-facade-node) - RESTful Client Facade for Pip.Services in Node.js
+- [pip-services-node-ws](https://github.com/pip-services/pip-services-node-ws) - Workspace for Pip.Services in Node.js
 
 ### Microservice framework for Python
 
