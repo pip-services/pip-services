@@ -134,10 +134,14 @@ This project would not be possible without effort contributed by particular indi
 - **Volodymyr Tkachenko** - .NET implementation, Service Fabric and Docker deployments
 - **Alex Mazur** - .NET implementations, Azure integration
 - **Andrew Harrinton** - .NET implementation, ElasticSearch, Prometheus and other technology-specific modules
+- **Egor Nuzhnykh** - Java implementation, documentation and samples
+- **Alexey Dvoykin** - documentation and samples
+- **Mark Makarychev** - documentation
 - **Alex Masliev** - Website and graphics
 
 We also would like to recognize help received from the following companies.
 
+- [**Conceptual Vision Consulting**](http://www.conceptualvisionconsulting.com)
 - **Digital Living Software Corp.**
 - [**Modular Mining Systems Inc.**](http://www.mmsi.com)
 - [**BootBarn**](http://www.bootbarn.com)
