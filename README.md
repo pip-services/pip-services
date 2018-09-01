@@ -1,17 +1,17 @@
 # <img src="https://github.com/pip-services/pip-services/blob/master/design/Logo.png" alt="Pip.Services Logo" style="max-width:30%"> <br/> cross-language and cross-platform microservices toolkit
 
 Pip.Services is a unique microservices toolkit that allows you to develop microservices
-in different languages using symmetric structure and patterns, make them interoperable with each other
+in different languages using symmetric structure and patterns, make them interoperable
 and run on variety of different platforms.
 
 With Pip.Services you can:
 - Speedup your microservice development by using prebuilt patterns and components
 - Use the toolkit by itself or easily mixed with other frameworks
-- Confidently high-quality production-grade microservices
+- Confidently build high-quality production-grade microservices
 - Develop interoperable microservices in .NET, Java, Node.js, Python, and Go (under development)
-- Run microservices on AWS, Azure, Go Cloud or on premises
+- Run microservices on AWS, Azure, Go Cloud or on-premises
 - Deploy microservices in Docker, Serverless, Service Fabric or in other containers.
-- Switching platforms and technologies without touching existing code
+- Switch platforms and technologies without touching existing code
 
 <!--
 To unleash that potential, microservices developed using Pip.Services toolkit often employ componentized design:
@@ -75,32 +75,41 @@ module breakdown to optimize external dependencies.
 
 On the top of that core, the toolkit has a number of technology-specific modules:
 - **AWS**: AWS specific components
+  <br/>
   [.NET](http://github.com/pip-services-dotnet/pip-services-aws-dotnet) | 
   [Node.js](http://github.com/pip-services-java/pip-services-aws-node)
 - **Azure**: Azure specific components
+  <br/>
   [.NET](http://github.com/pip-services-dotnet/pip-services-azure-dotnet) | 
   [Node.js](http://github.com/pip-services-java/pip-services-azure-node)
 - **MongoDB**: MongoDB persistence components
+  <br/>
   [.NET](http://github.com/pip-services-dotnet/pip-services-mongodb-dotnet) | 
   [Java](http://github.com/pip-services-java/pip-services-mongodb-java) | 
   [Node.js](http://github.com/pip-services-node/pip-services-mongodb-node) | 
   [Python](http://github.com/pip-services-python/pip-services-mongodb-python)
 - **Memcached**: Memcached caching and synchronization components
+  <br/>
   [.NET](http://github.com/pip-services-dotnet/pip-services-memcached-dotnet) | 
   [Node.js](http://github.com/pip-services-java/pip-services-memcached-node)
 - **Redis**: Redis caching and synchronization components
+  <br/>
   [.NET](http://github.com/pip-services-dotnet/pip-services-redis-dotnet) | 
   [Node.js](http://github.com/pip-services-java/pip-services-redis-node)
 - **Prometheus**: Components for performance monitoring with Prometheus
+  <br/>
   [.NET](http://github.com/pip-services-dotnet/pip-services-prometheus-dotnet) | 
   [Node.js](http://github.com/pip-services-java/pip-services-prometheus-node)
 - **MQTT**: MQTT messaging components
+  <br/>
   [.NET](http://github.com/pip-services-dotnet/pip-services-mqtt-dotnet) | 
   [Node.js](http://github.com/pip-services-java/pip-services-mqtt-node)
 - **RabbitMQ**: RabbitMQ messaging components
+  <br/>
   [.NET](http://github.com/pip-services-dotnet/pip-services-rabbitmq-dotnet) | 
   [Node.js](http://github.com/pip-services-java/pip-services-rabbitmq-node)
 - **ElasticSearch**: ElasticSearch logging
+  <br/>
   [.NET](http://github.com/pip-services-dotnet/pip-services-elasticsearch-dotnet) | 
   [Node.js](http://github.com/pip-services-java/pip-services-elasticsearch-node)
 
@@ -134,3 +143,6 @@ We also would like to recognize help received from the following companies.
 - [**BootBarn**](http://www.bootbarn.com)
 - [**EPAM**](http://www.epam.com)
 - [**Kyrio**](http://www.kyrio.com)
+
+We are very active and open community. You are welcome to join our team
+to deliver new and better versions of the toolkit!
