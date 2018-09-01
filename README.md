@@ -75,19 +75,41 @@ module breakdown to optimize external dependencies.
 
 On the top of that core, the toolkit has a number of technology-specific modules:
 - **AWS**: AWS specific components
+  [.NET](http://github.com/pip-services-dotnet/pip-services-aws-dotnet) | 
+  [Node.js](http://github.com/pip-services-java/pip-services-aws-node)
 - **Azure**: Azure specific components
+  [.NET](http://github.com/pip-services-dotnet/pip-services-azure-dotnet) | 
+  [Node.js](http://github.com/pip-services-java/pip-services-azure-node)
 - **MongoDB**: MongoDB persistence components
+  [.NET](http://github.com/pip-services-dotnet/pip-services-mongodb-dotnet) | 
+  [Java](http://github.com/pip-services-java/pip-services-mongodb-java) | 
+  [Node.js](http://github.com/pip-services-node/pip-services-mongodb-node) | 
+  [Python](http://github.com/pip-services-python/pip-services-mongodb-python)
 - **Memcached**: Memcached caching and synchronization components
+  [.NET](http://github.com/pip-services-dotnet/pip-services-memcached-dotnet) | 
+  [Node.js](http://github.com/pip-services-java/pip-services-memcached-node)
 - **Redis**: Redis caching and synchronization components
+  [.NET](http://github.com/pip-services-dotnet/pip-services-redis-dotnet) | 
+  [Node.js](http://github.com/pip-services-java/pip-services-redis-node)
 - **Prometheus**: Components for performance monitoring with Prometheus
+  [.NET](http://github.com/pip-services-dotnet/pip-services-prometheus-dotnet) | 
+  [Node.js](http://github.com/pip-services-java/pip-services-prometheus-node)
 - **MQTT**: MQTT messaging components
+  [.NET](http://github.com/pip-services-dotnet/pip-services-mqtt-dotnet) | 
+  [Node.js](http://github.com/pip-services-java/pip-services-mqtt-node)
 - **RabbitMQ**: RabbitMQ messaging components
+  [.NET](http://github.com/pip-services-dotnet/pip-services-rabbitmq-dotnet) | 
+  [Node.js](http://github.com/pip-services-java/pip-services-rabbitmq-node)
 - **ElasticSearch**: ElasticSearch logging
+  [.NET](http://github.com/pip-services-dotnet/pip-services-elasticsearch-dotnet) | 
+  [Node.js](http://github.com/pip-services-java/pip-services-elasticsearch-node)
 
 And more components and modules are added every month!
 
-The unique features of Pip.Services toolkit made possible to develop a rich library of reusable microservice
-that can be tailored to your technological platform by using simple configuration.
+## Library of Reusable Microservices
+
+The unique features of Pip.Services toolkit made it possible to develop a rich library of reusable microservices
+that can be tailored to your technological platform by using a simple configuration.
 To learn more about the library please visit [http://github.com/pip-services/pip-services-library](http://github.com/pip-services/pip-services-library).
 
 ## Quick Links
