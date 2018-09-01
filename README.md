@@ -77,11 +77,11 @@ On the top of that core, the toolkit has a number of technology-specific modules
 - **AWS**: AWS specific components
   <br/>
   [.NET](http://github.com/pip-services-dotnet/pip-services-aws-dotnet) | 
-  [Node.js](http://github.com/pip-services-java/pip-services-aws-node)
+  [Node.js](http://github.com/pip-services-node/pip-services-aws-node)
 - **Azure**: Azure specific components
   <br/>
   [.NET](http://github.com/pip-services-dotnet/pip-services-azure-dotnet) | 
-  [Node.js](http://github.com/pip-services-java/pip-services-azure-node)
+  [Node.js](http://github.com/pip-services-node/pip-services-azure-node)
 - **MongoDB**: MongoDB persistence components
   <br/>
   [.NET](http://github.com/pip-services-dotnet/pip-services-mongodb-dotnet) | 
@@ -91,27 +91,27 @@ On the top of that core, the toolkit has a number of technology-specific modules
 - **Memcached**: Memcached caching and synchronization components
   <br/>
   [.NET](http://github.com/pip-services-dotnet/pip-services-memcached-dotnet) | 
-  [Node.js](http://github.com/pip-services-java/pip-services-memcached-node)
+  [Node.js](http://github.com/pip-services-node/pip-services-memcached-node)
 - **Redis**: Redis caching and synchronization components
   <br/>
   [.NET](http://github.com/pip-services-dotnet/pip-services-redis-dotnet) | 
-  [Node.js](http://github.com/pip-services-java/pip-services-redis-node)
+  [Node.js](http://github.com/pip-services-node/pip-services-redis-node)
 - **Prometheus**: Components for performance monitoring with Prometheus
   <br/>
   [.NET](http://github.com/pip-services-dotnet/pip-services-prometheus-dotnet) | 
-  [Node.js](http://github.com/pip-services-java/pip-services-prometheus-node)
+  [Node.js](http://github.com/pip-services-node/pip-services-prometheus-node)
 - **MQTT**: MQTT messaging components
   <br/>
   [.NET](http://github.com/pip-services-dotnet/pip-services-mqtt-dotnet) | 
-  [Node.js](http://github.com/pip-services-java/pip-services-mqtt-node)
+  [Node.js](http://github.com/pip-services-node/pip-services-mqtt-node)
 - **RabbitMQ**: RabbitMQ messaging components
   <br/>
   [.NET](http://github.com/pip-services-dotnet/pip-services-rabbitmq-dotnet) | 
-  [Node.js](http://github.com/pip-services-java/pip-services-rabbitmq-node)
+  [Node.js](http://github.com/pip-services-node/pip-services-rabbitmq-node)
 - **ElasticSearch**: ElasticSearch logging
   <br/>
   [.NET](http://github.com/pip-services-dotnet/pip-services-elasticsearch-dotnet) | 
-  [Node.js](http://github.com/pip-services-java/pip-services-elasticsearch-node)
+  [Node.js](http://github.com/pip-services-node/pip-services-elasticsearch-node)
 
 And more components and modules are added every month!
 
