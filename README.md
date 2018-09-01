@@ -13,22 +13,32 @@ With Pip.Services you can:
 - Deploy microservices in Docker, Serverless, Service Fabric or in other containers.
 - Switching platforms and technologies without touching existing code
 
+<!--
 To unleash that potential, microservices developed using Pip.Services toolkit often employ componentized design:
 
 <p align="center">
-  <img alt="Microservice Design" src="design/microservice_design.png">
+  <img alt="Microservice Design" src="design/MicroserviceDesign.png">
 </p>
+-->
+
+## Architecture
 
 Pip.Services toolkit is divided into several modules:
 
 <p align="center">
-  <img alt="Toolkit Architecture" src="design/toolkit_architecture.png">
+  <img alt="Toolkit Architecture" src="design/ToolkitArchitecture.png">
 </p>
 
 Version 3.0 which is released in September 2018 offers cleaner implementation and fine granular 
 module breakdown to optimize external dependencies.
 
 - **Commons**: cross-language primitives and common implementation patterns
+  <br/>
+  [.NET](http://github.com/pip-services-dotnet/pip-services-commons-dotnet) | 
+  [Java](http://github.com/pip-services-java/pip-services-commons-java) | 
+  [Node.js](http://github.com/pip-services-node/pip-services-commons-node) | 
+  [Python](http://github.com/pip-services-python/pip-services-commons-python) | 
+  [Go](http://github.com/pip-services-go/pip-services-commons-go)
 - **Components**: generic component definitions
 - **Container**: inversion of control (IoC) container
 - **Data**: data processing interfaces and abstract persistence components
