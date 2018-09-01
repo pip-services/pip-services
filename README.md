@@ -121,6 +121,20 @@ The unique features of Pip.Services toolkit made it possible to develop a rich l
 that can be tailored to your technological platform by using a simple configuration.
 To learn more about the library please visit [http://github.com/pip-services/pip-services-library](http://github.com/pip-services/pip-services-library).
 
+## Usage
+
+Video and written tutorials on how to use the toolkit are coming soon.
+
+For now, please, look at the following examples:
+* Beacons microservice
+  <br/>
+  [.NET](http://github.com/pip-services-samples/pip-services-beacons-dotnet) | 
+  [Java](http://github.com/pip-services-samples/pip-services-beacons-java) | 
+  [Node.js](http://github.com/pip-services-samples/pip-services-beacons-node) | 
+  [Python](http://github.com/pip-services-samples/pip-services-beacons-python) | 
+  [Go](http://github.com/pip-services-samples/pip-services-beacons-go)
+
+
 ## Quick Links
 
 - [Pip.Services discussion forum](https://groups.google.com/forum/#!forum/pip-services)
