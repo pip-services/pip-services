@@ -23,13 +23,11 @@ To unleash that potential, microservices developed using Pip.Services toolkit of
 
 ## Architecture
 
-Pip.Services toolkit is divided into several modules:
-
 <p align="center">
   <img alt="Toolkit Architecture" src="design/ToolkitArchitecture.png">
 </p>
 
-Version 3.0 which is released in September 2018 offers cleaner implementation and fine granular 
+The version 3.0 released in September 2018 offers a cleaner implementation and fine granular 
 module breakdown to optimize external dependencies.
 
 - **Commons**: cross-language primitives and common implementation patterns
@@ -40,10 +38,40 @@ module breakdown to optimize external dependencies.
   [Python](http://github.com/pip-services-python/pip-services-commons-python) | 
   [Go](http://github.com/pip-services-go/pip-services-commons-go)
 - **Components**: generic component definitions
+  <br/>
+  [.NET](http://github.com/pip-services-dotnet/pip-services-components-dotnet) | 
+  [Java](http://github.com/pip-services-java/pip-services-components-java) | 
+  [Node.js](http://github.com/pip-services-node/pip-services-components-node) | 
+  [Python](http://github.com/pip-services-python/pip-services-components-python) | 
+  [Go](http://github.com/pip-services-go/pip-services-components-go)
 - **Container**: inversion of control (IoC) container
+  <br/>
+  [.NET](http://github.com/pip-services-dotnet/pip-services-container-dotnet) | 
+  [Java](http://github.com/pip-services-java/pip-services-container-java) | 
+  [Node.js](http://github.com/pip-services-node/pip-services-container-node) | 
+  [Python](http://github.com/pip-services-python/pip-services-container-python) | 
+  [Go](http://github.com/pip-services-go/pip-services-container-go)
 - **Data**: data processing interfaces and abstract persistence components
+  <br/>
+  [.NET](http://github.com/pip-services-dotnet/pip-services-data-dotnet) | 
+  [Java](http://github.com/pip-services-java/pip-services-data-java) | 
+  [Node.js](http://github.com/pip-services-node/pip-services-data-node) | 
+  [Python](http://github.com/pip-services-python/pip-services-data-python) | 
+  [Go](http://github.com/pip-services-go/pip-services-data-go)
 - **RPC**: components to implement synchronous communication (remote procedure calls or RPC)
+  <br/>
+  [.NET](http://github.com/pip-services-dotnet/pip-services-rpc-dotnet) | 
+  [Java](http://github.com/pip-services-java/pip-services-rpc-java) | 
+  [Node.js](http://github.com/pip-services-node/pip-services-rpc-node) | 
+  [Python](http://github.com/pip-services-python/pip-services-rpc-python) | 
+  [Go](http://github.com/pip-services-go/pip-services-rpc-go)
 - **Messaging**: components to implement asynchronous communication (async messaging)
+  <br/>
+  [.NET](http://github.com/pip-services-dotnet/pip-services-messaging-dotnet) | 
+  [Java](http://github.com/pip-services-java/pip-services-messaging-java) | 
+  [Node.js](http://github.com/pip-services-node/pip-services-messaging-node) | 
+  [Python](http://github.com/pip-services-python/pip-services-messaging-python) | 
+  [Go](http://github.com/pip-services-go/pip-services-messaging-go)
 
 On the top of that core, the toolkit has a number of technology-specific modules:
 - **AWS**: AWS specific components
