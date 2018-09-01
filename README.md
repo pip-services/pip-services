@@ -128,11 +128,11 @@ Video and written tutorials on how to use the toolkit are coming soon.
 For now, please, look at the following examples:
 * Beacons microservice
   <br/>
-  [.NET](http://github.com/pip-services-samples/pip-services-beacons-dotnet) | 
-  [Java](http://github.com/pip-services-samples/pip-services-beacons-java) | 
-  [Node.js](http://github.com/pip-services-samples/pip-services-beacons-node) | 
-  [Python](http://github.com/pip-services-samples/pip-services-beacons-python) | 
-  [Go](http://github.com/pip-services-samples/pip-services-beacons-go)
+  [.NET](http://github.com/pip-services-samples/pip-samples-beacons-dotnet) | 
+  [Java](http://github.com/pip-services-samples/pip-samples-beacons-java) | 
+  [Node.js](http://github.com/pip-services-samples/pip-samples-beacons-node) | 
+  [Python](http://github.com/pip-services-samples/pip-samples-beacons-python) | 
+  [Go](http://github.com/pip-services-samples/pip-samples-beacons-go)
 
 
 ## Quick Links
