@@ -141,7 +141,7 @@ For now, please, look at the following examples:
 
 ## Acknowledgements
 
-This project would not be possible without effort contributed by particular individuals.
+This project would not be possible without the effort contributed by particular individuals.
 
 - **Sergey Seroukhov** - the project founder
 - **Mark Zontak** - Node.js and .NET implementations, AWS integration
