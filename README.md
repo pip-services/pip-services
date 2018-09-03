@@ -117,7 +117,7 @@ And more components and modules are added every month!
 
 ## Library of Reusable Microservices
 
-The unique features of Pip.Services toolkit made it possible to develop a rich library of reusable microservices
+The unique features of Pip.Services toolkit make it possible to develop a rich library of reusable microservices
 that can be tailored to your technological platform by using a simple configuration.
 To learn more about the library please visit [http://github.com/pip-services/pip-services-library](http://github.com/pip-services/pip-services-library).
 
@@ -162,5 +162,5 @@ We also would like to recognize help received from the following companies.
 - [**EPAM**](http://www.epam.com)
 - [**Kyrio**](http://www.kyrio.com)
 
-We are very active and open community. You are welcome to join our team
+We are a very active and open community. You are welcome to join our team
 to deliver new and better versions of the toolkit!
