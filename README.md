@@ -1,17 +1,15 @@
 # <img src="https://github.com/pip-services/pip-services/blob/master/design/Logo.png" alt="Pip.Services Logo" style="max-width:30%"> <br/> cross-language and cross-platform microservices toolkit
 
-Pip.Services is a unique microservices toolkit that allows you to develop microservices
-in different languages using symmetric structure and patterns, make them interoperable
-and run on variety of different platforms.
+Pip.Services is a unique toolkit that allows you to develop microservices for different platforms in the language of your choice. Maintanance and interoperability are easily accomplished because of the toolkit's use of symmetric structures and patterns.
 
 With Pip.Services you can:
 - Speedup your microservice development by using prebuilt patterns and components
-- Use the toolkit by itself or easily mixed with other frameworks
-- Confidently build high-quality production-grade microservices
+- Use the toolkit by itself or in conjunction with other frameworks
+- Confidently build high-quality, production-grade microservices
 - Develop interoperable microservices in .NET, Java, Node.js, Python, and Go (under development)
 - Run microservices on AWS, Azure, Go Cloud or on-premises
 - Deploy microservices in Docker, Serverless, Service Fabric or in other containers.
-- Switch platforms and technologies without touching existing code
+- Switch platforms and technologies without touching the existing code
 
 <!--
 To unleash that potential, microservices developed using Pip.Services toolkit often employ componentized design:
@@ -27,8 +25,7 @@ To unleash that potential, microservices developed using Pip.Services toolkit of
   <img alt="Toolkit Architecture" src="design/ToolkitArchitecture.png">
 </p>
 
-The version 3.0 released in September 2018 offers a cleaner implementation and fine granular 
-module breakdown to optimize external dependencies.
+Version 3.0 released in September 2018 offers a cleaner implementation and a more granular breakdown of the modules to optimize external dependencies.
 
 - **Commons**: cross-language primitives and common implementation patterns
   <br/>
@@ -117,7 +114,7 @@ And more components and modules are added every month!
 
 ## Library of Reusable Microservices
 
-The unique features of Pip.Services toolkit make it possible to develop a rich library of reusable microservices
+The unique features of the Pip.Services toolkit make it possible to develop a rich library of reusable microservices
 that can be tailored to your technological platform by using a simple configuration.
 To learn more about the library please visit [http://github.com/pip-services/pip-services-library](http://github.com/pip-services/pip-services-library).
 
