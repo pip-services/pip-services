@@ -1,0 +1,21 @@
+{
+  "name": "echo-service",
+  "version": "1.0.0",
+  "main": "./obj/src/index.js",
+  "typings": "./obj/src/index.d.ts",
+  "scripts": {},
+  "dependencies": {
+    "pip-services-commons-node": "^3.0.*",
+    "pip-services-components-node": "^3.0.*",
+    "pip-services-container-node": "3.0.*",
+    "pip-services-data-node": "^3.0.*",
+    "pip-services-rpc-node": "^3.0.*",
+    "tsc": "^1.20150623.0",
+    "typescript": "^3.0.3"
+  },
+  "devDependencies": {
+    "@types/async": "^2.0.49",
+    "@types/lodash": "^4.14.109",
+    "@types/node": "^10.3.0"
+  }
+}

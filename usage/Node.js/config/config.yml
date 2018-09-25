@@ -1,0 +1,31 @@
+---
+# Container descriptor
+- descriptor: "pip-services:context-info:default:default:1.0"
+  name: "echo"
+  description: "Echo microservice"
+
+# Console logger
+- descriptor: "pip-services:logger:console:default:1.0"
+  level: "trace"
+
+# Perfomance counter that post values to log
+- descriptor: "pip-services:counters:log:default:1.0"
+
+# Controller
+- descriptor: "echo:controller:default:default:1.0"
+
+# Shared HTTP Endpoint
+- descriptor: "pip-services:endpoint:http:default:1.0"
+  connection:
+    protocol: http
+    host: 0.0.0.0
+    port: 8080
+
+# HTTP Service V1
+- descriptor: "echo:service:http:default:1.0"
+
+# Hearbeat service
+- descriptor: "pip-services:heartbeat-service:http:default:1.0"
+
+# Status service
+- descriptor: "pip-services:status-service:http:default:1.0"
