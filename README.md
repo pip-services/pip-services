@@ -29,86 +29,86 @@ Version 3.0 released in September 2018 offers a cleaner implementation and a mor
 
 - **Commons**: cross-language primitives and common implementation patterns
   <br/>
-  [.NET](http://github.com/pip-services-dotnet/pip-services-commons-dotnet) | 
-  [Java](http://github.com/pip-services-java/pip-services-commons-java) | 
-  [Node.js](http://github.com/pip-services-node/pip-services-commons-node) | 
-  [Python](http://github.com/pip-services-python/pip-services-commons-python) | 
-  [Go](http://github.com/pip-services-go/pip-services-commons-go)
+  [.NET](http://github.com/pip-services3-dotnet/pip-services3-commons-dotnet) | 
+  [Java](http://github.com/pip-services3-java/pip-services3-commons-java) | 
+  [Node.js](http://github.com/pip-services3-node/pip-services3-commons-node) | 
+  [Python](http://github.com/pip-services3-python/pip-services3-commons-python) | 
+  [Go](http://github.com/pip-services3-go/pip-services3-commons-go)
 - **Components**: generic component definitions
   <br/>
-  [.NET](http://github.com/pip-services-dotnet/pip-services-components-dotnet) | 
-  [Java](http://github.com/pip-services-java/pip-services-components-java) | 
-  [Node.js](http://github.com/pip-services-node/pip-services-components-node) | 
-  [Python](http://github.com/pip-services-python/pip-services-components-python) | 
-  [Go](http://github.com/pip-services-go/pip-services-components-go)
+  [.NET](http://github.com/pip-services3-dotnet/pip-services3-components-dotnet) | 
+  [Java](http://github.com/pip-services3-java/pip-services3-components-java) | 
+  [Node.js](http://github.com/pip-services3-node/pip-services3-components-node) | 
+  [Python](http://github.com/pip-services3-python/pip-services3-components-python) | 
+  [Go](http://github.com/pip-services3-go/pip-services3-components-go)
 - **Container**: inversion of control (IoC) container
   <br/>
-  [.NET](http://github.com/pip-services-dotnet/pip-services-container-dotnet) | 
-  [Java](http://github.com/pip-services-java/pip-services-container-java) | 
-  [Node.js](http://github.com/pip-services-node/pip-services-container-node) | 
-  [Python](http://github.com/pip-services-python/pip-services-container-python) | 
-  [Go](http://github.com/pip-services-go/pip-services-container-go)
+  [.NET](http://github.com/pip-services3-dotnet/pip-services3-container-dotnet) | 
+  [Java](http://github.com/pip-services3-java/pip-services3-container-java) | 
+  [Node.js](http://github.com/pip-services3-node/pip-services3-container-node) | 
+  [Python](http://github.com/pip-services3-python/pip-services3-container-python) | 
+  [Go](http://github.com/pip-services3-go/pip-services3-container-go)
 - **Data**: data processing interfaces and abstract persistence components
   <br/>
-  [.NET](http://github.com/pip-services-dotnet/pip-services-data-dotnet) | 
-  [Java](http://github.com/pip-services-java/pip-services-data-java) | 
-  [Node.js](http://github.com/pip-services-node/pip-services-data-node) | 
-  [Python](http://github.com/pip-services-python/pip-services-data-python) | 
-  [Go](http://github.com/pip-services-go/pip-services-data-go)
+  [.NET](http://github.com/pip-services3-dotnet/pip-services3-data-dotnet) | 
+  [Java](http://github.com/pip-services3-java/pip-services3-data-java) | 
+  [Node.js](http://github.com/pip-services3-node/pip-services3-data-node) | 
+  [Python](http://github.com/pip-services3-python/pip-services3-data-python) | 
+  [Go](http://github.com/pip-services3-go/pip-services3-data-go)
 - **RPC**: components to implement synchronous communication (remote procedure calls or RPC)
   <br/>
-  [.NET](http://github.com/pip-services-dotnet/pip-services-rpc-dotnet) | 
-  [Java](http://github.com/pip-services-java/pip-services-rpc-java) | 
-  [Node.js](http://github.com/pip-services-node/pip-services-rpc-node) | 
-  [Python](http://github.com/pip-services-python/pip-services-rpc-python) | 
-  [Go](http://github.com/pip-services-go/pip-services-rpc-go)
+  [.NET](http://github.com/pip-services3-dotnet/pip-services3-rpc-dotnet) | 
+  [Java](http://github.com/pip-services3-java/pip-services3-rpc-java) | 
+  [Node.js](http://github.com/pip-services3-node/pip-services3-rpc-node) | 
+  [Python](http://github.com/pip-services3-python/pip-services3-rpc-python) | 
+  [Go](http://github.com/pip-services3-go/pip-services3-rpc-go)
 - **Messaging**: components to implement asynchronous communication (async messaging)
   <br/>
-  [.NET](http://github.com/pip-services-dotnet/pip-services-messaging-dotnet) | 
-  [Java](http://github.com/pip-services-java/pip-services-messaging-java) | 
-  [Node.js](http://github.com/pip-services-node/pip-services-messaging-node) | 
-  [Python](http://github.com/pip-services-python/pip-services-messaging-python) | 
-  [Go](http://github.com/pip-services-go/pip-services-messaging-go)
+  [.NET](http://github.com/pip-services3-dotnet/pip-services3-messaging-dotnet) | 
+  [Java](http://github.com/pip-services3-java/pip-services3-messaging-java) | 
+  [Node.js](http://github.com/pip-services3-node/pip-services3-messaging-node) | 
+  [Python](http://github.com/pip-services3-python/pip-services3-messaging-python) | 
+  [Go](http://github.com/pip-services3-go/pip-services3-messaging-go)
 
 On the top of that core, the toolkit has a number of technology-specific modules:
 - **AWS**: AWS specific components
   <br/>
-  [.NET](http://github.com/pip-services-dotnet/pip-services-aws-dotnet) | 
-  [Node.js](http://github.com/pip-services-node/pip-services-aws-node)
+  [.NET](http://github.com/pip-services3-dotnet/pip-services3-aws-dotnet) | 
+  [Node.js](http://github.com/pip-services3-node/pip-services3-aws-node)
 - **Azure**: Azure specific components
   <br/>
-  [.NET](http://github.com/pip-services-dotnet/pip-services-azure-dotnet) | 
-  [Node.js](http://github.com/pip-services-node/pip-services-azure-node)
+  [.NET](http://github.com/pip-services3-dotnet/pip-services3-azure-dotnet) | 
+  [Node.js](http://github.com/pip-services3-node/pip-services3-azure-node)
 - **MongoDB**: MongoDB persistence components
   <br/>
-  [.NET](http://github.com/pip-services-dotnet/pip-services-mongodb-dotnet) | 
-  [Java](http://github.com/pip-services-java/pip-services-mongodb-java) | 
-  [Node.js](http://github.com/pip-services-node/pip-services-mongodb-node) | 
-  [Python](http://github.com/pip-services-python/pip-services-mongodb-python)
+  [.NET](http://github.com/pip-services3-dotnet/pip-services3-mongodb-dotnet) | 
+  [Java](http://github.com/pip-services3-java/pip-services3-mongodb-java) | 
+  [Node.js](http://github.com/pip-services3-node/pip-services3-mongodb-node) | 
+  [Python](http://github.com/pip-services3-python/pip-services3-mongodb-python)
 - **Memcached**: Memcached caching and synchronization components
   <br/>
-  [.NET](http://github.com/pip-services-dotnet/pip-services-memcached-dotnet) | 
-  [Node.js](http://github.com/pip-services-node/pip-services-memcached-node)
+  [.NET](http://github.com/pip-services3-dotnet/pip-services3-memcached-dotnet) | 
+  [Node.js](http://github.com/pip-services3-node/pip-services3-memcached-node)
 - **Redis**: Redis caching and synchronization components
   <br/>
-  [.NET](http://github.com/pip-services-dotnet/pip-services-redis-dotnet) | 
-  [Node.js](http://github.com/pip-services-node/pip-services-redis-node)
+  [.NET](http://github.com/pip-services3-dotnet/pip-services3-redis-dotnet) | 
+  [Node.js](http://github.com/pip-services3-n ode/pip-services3-redis-node)
 - **Prometheus**: Components for performance monitoring with Prometheus
   <br/>
-  [.NET](http://github.com/pip-services-dotnet/pip-services-prometheus-dotnet) | 
-  [Node.js](http://github.com/pip-services-node/pip-services-prometheus-node)
+  [.NET](http://github.com/pip-services3-dotnet/pip-services3-prometheus-dotnet) | 
+  [Node.js](http://github.com/pip-services3-node/pip-services3-prometheus-node)
 - **MQTT**: MQTT messaging components
   <br/>
-  [.NET](http://github.com/pip-services-dotnet/pip-services-mqtt-dotnet) | 
-  [Node.js](http://github.com/pip-services-node/pip-services-mqtt-node)
+  [.NET](http://github.com/pip-services3-dotnet/pip-services3-mqtt-dotnet) | 
+  [Node.js](http://github.com/pip-services3-node/pip-services3-mqtt-node)
 - **RabbitMQ**: RabbitMQ messaging components
   <br/>
-  [.NET](http://github.com/pip-services-dotnet/pip-services-rabbitmq-dotnet) | 
-  [Node.js](http://github.com/pip-services-node/pip-services-rabbitmq-node)
+  [.NET](http://github.com/pip-services3-dotnet/pip-services3-rabbitmq-dotnet) | 
+  [Node.js](http://github.com/pip-services3-node/pip-services3-rabbitmq-node)
 - **ElasticSearch**: ElasticSearch logging
   <br/>
-  [.NET](http://github.com/pip-services-dotnet/pip-services-elasticsearch-dotnet) | 
-  [Node.js](http://github.com/pip-services-node/pip-services-elasticsearch-node)
+  [.NET](http://github.com/pip-services3-dotnet/pip-services3-elasticsearch-dotnet) | 
+  [Node.js](http://github.com/pip-services3-node/pip-services3-elasticsearch-node)
 
 And more components and modules are added every month!
 
