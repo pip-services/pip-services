@@ -92,7 +92,7 @@ On the top of that core, the toolkit has a number of technology-specific modules
 - **Redis**: Redis caching and synchronization components
   <br/>
   [.NET](http://github.com/pip-services3-dotnet/pip-services3-redis-dotnet) | 
-  [Node.js](http://github.com/pip-services3-n ode/pip-services3-redis-node)
+  [Node.js](http://github.com/pip-services3-node/pip-services3-redis-node)
 - **Prometheus**: Components for performance monitoring with Prometheus
   <br/>
   [.NET](http://github.com/pip-services3-dotnet/pip-services3-prometheus-dotnet) | 
