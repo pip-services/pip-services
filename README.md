@@ -1,4 +1,4 @@
-# <img src="https://github.com/pip-services/pip-services/blob/master/design/Logo.png" alt="Pip.Services Logo" style="max-width:30%"> <br/> cross-language and cross-platform microservices toolkit
+# <img src="https://github.com/pip-services/pip-services/blob/master/design/Logo.png" alt="Pip.Services Logo" style="max-width:30%"> <br/> polyglot microservices toolkit
 
 Pip.Services is a unique toolkit that allows you to develop microservices for different platforms in the language of your choice. Maintanance and interoperability are easily accomplished because of the toolkit's use of symmetric structures and patterns.
 
