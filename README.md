@@ -152,7 +152,7 @@ This project would not be possible without the effort contributed by particular 
 
 We also would like to recognize help received from the following companies.
 
-- [**Conceptual Vision Consulting**](http://www.conceptualvisionconsulting.com)
+- [**Enterprise Innovation Consulting**](https://www.entinco.com/)
 - **Digital Living Software Corp.**
 - [**Modular Mining Systems Inc.**](http://www.mmsi.com)
 - [**BootBarn**](http://www.bootbarn.com)
