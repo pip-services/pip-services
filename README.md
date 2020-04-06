@@ -6,8 +6,8 @@ With Pip.Services you can:
 - Speedup your microservice development by using prebuilt patterns and components
 - Use the toolkit by itself or in conjunction with other frameworks
 - Confidently build high-quality, production-grade microservices
-- Develop interoperable microservices in .NET, Java, Node.js, Python, and Go (under development)
-- Run microservices on AWS, Azure, Go Cloud or on-premises
+- Develop interoperable microservices in Core .NET, Java, Node.js, Python, Go and Dart
+- Run microservices on AWS, Azure, Google Cloud or on-premises
 - Deploy microservices in Docker, Serverless, Service Fabric or in other containers.
 - Switch platforms and technologies without touching the existing code
 
@@ -33,42 +33,48 @@ Version 3.0 released in September 2018 offers a cleaner implementation and a mor
   [Java](http://github.com/pip-services3-java/pip-services3-commons-java) | 
   [Node.js](http://github.com/pip-services3-node/pip-services3-commons-node) | 
   [Python](http://github.com/pip-services3-python/pip-services3-commons-python) | 
-  [Go](http://github.com/pip-services3-go/pip-services3-commons-go)
+  [Go](http://github.com/pip-services3-go/pip-services3-commons-go) | 
+  [Dart](http://github.com/pip-services3-go/pip-services3-commons-dart)
 - **Components**: generic component definitions
   <br/>
   [.NET](http://github.com/pip-services3-dotnet/pip-services3-components-dotnet) | 
   [Java](http://github.com/pip-services3-java/pip-services3-components-java) | 
   [Node.js](http://github.com/pip-services3-node/pip-services3-components-node) | 
   [Python](http://github.com/pip-services3-python/pip-services3-components-python) | 
-  [Go](http://github.com/pip-services3-go/pip-services3-components-go)
+  [Go](http://github.com/pip-services3-go/pip-services3-components-go) | 
+  [Dart](http://github.com/pip-services3-go/pip-services3-components-dart)
 - **Container**: inversion of control (IoC) container
   <br/>
   [.NET](http://github.com/pip-services3-dotnet/pip-services3-container-dotnet) | 
   [Java](http://github.com/pip-services3-java/pip-services3-container-java) | 
   [Node.js](http://github.com/pip-services3-node/pip-services3-container-node) | 
   [Python](http://github.com/pip-services3-python/pip-services3-container-python) | 
-  [Go](http://github.com/pip-services3-go/pip-services3-container-go)
+  [Go](http://github.com/pip-services3-go/pip-services3-container-go) | 
+  [Dart](http://github.com/pip-services3-go/pip-services3-container-dart)
 - **Data**: data processing interfaces and abstract persistence components
   <br/>
   [.NET](http://github.com/pip-services3-dotnet/pip-services3-data-dotnet) | 
   [Java](http://github.com/pip-services3-java/pip-services3-data-java) | 
   [Node.js](http://github.com/pip-services3-node/pip-services3-data-node) | 
   [Python](http://github.com/pip-services3-python/pip-services3-data-python) | 
-  [Go](http://github.com/pip-services3-go/pip-services3-data-go)
+  [Go](http://github.com/pip-services3-go/pip-services3-data-go) | 
+  [Dart](http://github.com/pip-services3-go/pip-services3-data-dart)
 - **RPC**: components to implement synchronous communication (remote procedure calls or RPC)
   <br/>
   [.NET](http://github.com/pip-services3-dotnet/pip-services3-rpc-dotnet) | 
   [Java](http://github.com/pip-services3-java/pip-services3-rpc-java) | 
   [Node.js](http://github.com/pip-services3-node/pip-services3-rpc-node) | 
   [Python](http://github.com/pip-services3-python/pip-services3-rpc-python) | 
-  [Go](http://github.com/pip-services3-go/pip-services3-rpc-go)
+  [Go](http://github.com/pip-services3-go/pip-services3-rpc-go) | 
+  [Dart](http://github.com/pip-services3-go/pip-services3-rpc-dart)
 - **Messaging**: components to implement asynchronous communication (async messaging)
   <br/>
   [.NET](http://github.com/pip-services3-dotnet/pip-services3-messaging-dotnet) | 
   [Java](http://github.com/pip-services3-java/pip-services3-messaging-java) | 
   [Node.js](http://github.com/pip-services3-node/pip-services3-messaging-node) | 
   [Python](http://github.com/pip-services3-python/pip-services3-messaging-python) | 
-  [Go](http://github.com/pip-services3-go/pip-services3-messaging-go)
+  [Go](http://github.com/pip-services3-go/pip-services3-messaging-go) | 
+  [Dart](http://github.com/pip-services3-go/pip-services3-messaging-dart)
 
 On the top of that core, the toolkit has a number of technology-specific modules:
 - **AWS**: AWS specific components
@@ -84,31 +90,38 @@ On the top of that core, the toolkit has a number of technology-specific modules
   [.NET](http://github.com/pip-services3-dotnet/pip-services3-mongodb-dotnet) | 
   [Java](http://github.com/pip-services3-java/pip-services3-mongodb-java) | 
   [Node.js](http://github.com/pip-services3-node/pip-services3-mongodb-node) | 
-  [Python](http://github.com/pip-services3-python/pip-services3-mongodb-python)
+  [Python](http://github.com/pip-services3-python/pip-services3-mongodb-python) | 
+  [Go](http://github.com/pip-services3-python/pip-services3-mongodb-go)
 - **Memcached**: Memcached caching and synchronization components
   <br/>
   [.NET](http://github.com/pip-services3-dotnet/pip-services3-memcached-dotnet) | 
-  [Node.js](http://github.com/pip-services3-node/pip-services3-memcached-node)
+  [Node.js](http://github.com/pip-services3-node/pip-services3-memcached-node) | 
+  [Go](http://github.com/pip-services3-node/pip-services3-memcached-go)
 - **Redis**: Redis caching and synchronization components
   <br/>
   [.NET](http://github.com/pip-services3-dotnet/pip-services3-redis-dotnet) | 
-  [Node.js](http://github.com/pip-services3-node/pip-services3-redis-node)
+  [Node.js](http://github.com/pip-services3-node/pip-services3-redis-node) | 
+  [Go](http://github.com/pip-services3-node/pip-services3-redis-go)
 - **Prometheus**: Components for performance monitoring with Prometheus
   <br/>
   [.NET](http://github.com/pip-services3-dotnet/pip-services3-prometheus-dotnet) | 
-  [Node.js](http://github.com/pip-services3-node/pip-services3-prometheus-node)
+  [Node.js](http://github.com/pip-services3-node/pip-services3-prometheus-node) | 
+  [Go](http://github.com/pip-services3-node/pip-services3-prometheus-go)
 - **MQTT**: MQTT messaging components
   <br/>
   [.NET](http://github.com/pip-services3-dotnet/pip-services3-mqtt-dotnet) | 
-  [Node.js](http://github.com/pip-services3-node/pip-services3-mqtt-node)
+  [Node.js](http://github.com/pip-services3-node/pip-services3-mqtt-node) | 
+  [Go](http://github.com/pip-services3-node/pip-services3-mqtt-go)
 - **RabbitMQ**: RabbitMQ messaging components
   <br/>
   [.NET](http://github.com/pip-services3-dotnet/pip-services3-rabbitmq-dotnet) | 
-  [Node.js](http://github.com/pip-services3-node/pip-services3-rabbitmq-node)
+  [Node.js](http://github.com/pip-services3-node/pip-services3-rabbitmq-node) | 
+  [Go](http://github.com/pip-services3-node/pip-services3-rabbitmq-go)
 - **ElasticSearch**: ElasticSearch logging
   <br/>
   [.NET](http://github.com/pip-services3-dotnet/pip-services3-elasticsearch-dotnet) | 
-  [Node.js](http://github.com/pip-services3-node/pip-services3-elasticsearch-node)
+  [Node.js](http://github.com/pip-services3-node/pip-services3-elasticsearch-node) | 
+  [Go](http://github.com/pip-services3-node/pip-services3-elasticsearch-go)
 
 And more components and modules are added every month!
 
@@ -146,6 +159,7 @@ This project would not be possible without the effort contributed by particular 
 - **Alex Mazur** - .NET implementations, Azure integration
 - **Andrew Harrinton** - .NET implementation, ElasticSearch, Prometheus and other technology-specific modules
 - **Egor Nuzhnykh** - Java implementation, documentation and samples
+- **Dmitry Levichev** - Golang implementation, documentation and samples
 - **Alexey Dvoykin** - documentation and samples
 - **Mark Makarychev** - documentation
 - **Alex Masliev** - Website and graphics
@@ -158,6 +172,7 @@ We also would like to recognize help received from the following companies.
 - [**BootBarn**](http://www.bootbarn.com)
 - [**EPAM**](http://www.epam.com)
 - [**Kyrio**](http://www.kyrio.com)
+- [**MST Global**](http://www.mstglobal.com)
 
 We are a very active and open community. You are welcome to join our team
 to deliver new and better versions of the toolkit!
