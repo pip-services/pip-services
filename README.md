@@ -6,7 +6,7 @@ With Pip.Services you can:
 - Speedup your microservice development by using prebuilt patterns and components
 - Use the toolkit by itself or in conjunction with other frameworks
 - Confidently build high-quality, production-grade microservices
-- Develop interoperable microservices in Core .NET, Java, Node.js, Python, Go and Dart
+- Develop interoperable microservices in .NET, Java, Node.js, Python, Go and Dart
 - Run microservices on AWS, Azure, Google Cloud or on-premises
 - Deploy microservices in Docker, Serverless, Service Fabric or in other containers.
 - Switch platforms and technologies without touching the existing code
