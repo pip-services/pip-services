@@ -34,7 +34,7 @@ Version 3.0 released in September 2018 offers a cleaner implementation and a mor
   [Node.js](http://github.com/pip-services3-node/pip-services3-commons-node) | 
   [Python](http://github.com/pip-services3-python/pip-services3-commons-python) | 
   [Go](http://github.com/pip-services3-go/pip-services3-commons-go) | 
-  [Dart](http://github.com/pip-services3-go/pip-services3-commons-dart)
+  [Dart](http://github.com/pip-services3-dart/pip-services3-commons-dart)
 - **Components**: generic component definitions
   <br/>
   [.NET](http://github.com/pip-services3-dotnet/pip-services3-components-dotnet) | 
@@ -42,7 +42,7 @@ Version 3.0 released in September 2018 offers a cleaner implementation and a mor
   [Node.js](http://github.com/pip-services3-node/pip-services3-components-node) | 
   [Python](http://github.com/pip-services3-python/pip-services3-components-python) | 
   [Go](http://github.com/pip-services3-go/pip-services3-components-go) | 
-  [Dart](http://github.com/pip-services3-go/pip-services3-components-dart)
+  [Dart](http://github.com/pip-services3-dart/pip-services3-components-dart)
 - **Container**: inversion of control (IoC) container
   <br/>
   [.NET](http://github.com/pip-services3-dotnet/pip-services3-container-dotnet) | 
@@ -50,7 +50,7 @@ Version 3.0 released in September 2018 offers a cleaner implementation and a mor
   [Node.js](http://github.com/pip-services3-node/pip-services3-container-node) | 
   [Python](http://github.com/pip-services3-python/pip-services3-container-python) | 
   [Go](http://github.com/pip-services3-go/pip-services3-container-go) | 
-  [Dart](http://github.com/pip-services3-go/pip-services3-container-dart)
+  [Dart](http://github.com/pip-services3-dart/pip-services3-container-dart)
 - **Data**: data processing interfaces and abstract persistence components
   <br/>
   [.NET](http://github.com/pip-services3-dotnet/pip-services3-data-dotnet) | 
@@ -58,7 +58,7 @@ Version 3.0 released in September 2018 offers a cleaner implementation and a mor
   [Node.js](http://github.com/pip-services3-node/pip-services3-data-node) | 
   [Python](http://github.com/pip-services3-python/pip-services3-data-python) | 
   [Go](http://github.com/pip-services3-go/pip-services3-data-go) | 
-  [Dart](http://github.com/pip-services3-go/pip-services3-data-dart)
+  [Dart](http://github.com/pip-services3-dart/pip-services3-data-dart)
 - **RPC**: components to implement synchronous communication (remote procedure calls or RPC)
   <br/>
   [.NET](http://github.com/pip-services3-dotnet/pip-services3-rpc-dotnet) | 
@@ -66,7 +66,7 @@ Version 3.0 released in September 2018 offers a cleaner implementation and a mor
   [Node.js](http://github.com/pip-services3-node/pip-services3-rpc-node) | 
   [Python](http://github.com/pip-services3-python/pip-services3-rpc-python) | 
   [Go](http://github.com/pip-services3-go/pip-services3-rpc-go) | 
-  [Dart](http://github.com/pip-services3-go/pip-services3-rpc-dart)
+  [Dart](http://github.com/pip-services3-dart/pip-services3-rpc-dart)
 - **Messaging**: components to implement asynchronous communication (async messaging)
   <br/>
   [.NET](http://github.com/pip-services3-dotnet/pip-services3-messaging-dotnet) | 
@@ -74,7 +74,7 @@ Version 3.0 released in September 2018 offers a cleaner implementation and a mor
   [Node.js](http://github.com/pip-services3-node/pip-services3-messaging-node) | 
   [Python](http://github.com/pip-services3-python/pip-services3-messaging-python) | 
   [Go](http://github.com/pip-services3-go/pip-services3-messaging-go) | 
-  [Dart](http://github.com/pip-services3-go/pip-services3-messaging-dart)
+  [Dart](http://github.com/pip-services3-dart/pip-services3-messaging-dart)
 
 On the top of that core, the toolkit has a number of technology-specific modules:
 - **AWS**: AWS specific components
@@ -91,37 +91,44 @@ On the top of that core, the toolkit has a number of technology-specific modules
   [Java](http://github.com/pip-services3-java/pip-services3-mongodb-java) | 
   [Node.js](http://github.com/pip-services3-node/pip-services3-mongodb-node) | 
   [Python](http://github.com/pip-services3-python/pip-services3-mongodb-python) | 
-  [Go](http://github.com/pip-services3-python/pip-services3-mongodb-go)
+  [Go](http://github.com/pip-services3-go/pip-services3-mongodb-go) | 
+  [Dart](http://github.com/pip-services3-dart/pip-services3-mongodb-dart) 
 - **Memcached**: Memcached caching and synchronization components
   <br/>
   [.NET](http://github.com/pip-services3-dotnet/pip-services3-memcached-dotnet) | 
   [Node.js](http://github.com/pip-services3-node/pip-services3-memcached-node) | 
-  [Go](http://github.com/pip-services3-node/pip-services3-memcached-go)
+  [Go](http://github.com/pip-services3-go/pip-services3-memcached-go) | 
+  [Dart](http://github.com/pip-services3-dart/pip-services3-memcached-dart)
 - **Redis**: Redis caching and synchronization components
   <br/>
   [.NET](http://github.com/pip-services3-dotnet/pip-services3-redis-dotnet) | 
   [Node.js](http://github.com/pip-services3-node/pip-services3-redis-node) | 
-  [Go](http://github.com/pip-services3-node/pip-services3-redis-go)
+  [Go](http://github.com/pip-services3-go/pip-services3-redis-go) | 
+  [Dart](http://github.com/pip-services3-dart/pip-services3-redis-dart)
 - **Prometheus**: Components for performance monitoring with Prometheus
   <br/>
   [.NET](http://github.com/pip-services3-dotnet/pip-services3-prometheus-dotnet) | 
   [Node.js](http://github.com/pip-services3-node/pip-services3-prometheus-node) | 
-  [Go](http://github.com/pip-services3-node/pip-services3-prometheus-go)
+  [Go](http://github.com/pip-services3-go/pip-services3-prometheus-go) | 
+  [Dart](http://github.com/pip-services3-dart/pip-services3-prometheus-dart)
 - **MQTT**: MQTT messaging components
   <br/>
   [.NET](http://github.com/pip-services3-dotnet/pip-services3-mqtt-dotnet) | 
   [Node.js](http://github.com/pip-services3-node/pip-services3-mqtt-node) | 
-  [Go](http://github.com/pip-services3-node/pip-services3-mqtt-go)
+  [Go](http://github.com/pip-services3-go/pip-services3-mqtt-go) | 
+  [Dart](http://github.com/pip-services3-dart/pip-services3-mqtt-dart)
 - **RabbitMQ**: RabbitMQ messaging components
   <br/>
   [.NET](http://github.com/pip-services3-dotnet/pip-services3-rabbitmq-dotnet) | 
   [Node.js](http://github.com/pip-services3-node/pip-services3-rabbitmq-node) | 
-  [Go](http://github.com/pip-services3-node/pip-services3-rabbitmq-go)
+  [Go](http://github.com/pip-services3-go/pip-services3-rabbitmq-go) | 
+  [Dart](http://github.com/pip-services3-dart/pip-services3-rabbitmq-dart)
 - **ElasticSearch**: ElasticSearch logging
   <br/>
   [.NET](http://github.com/pip-services3-dotnet/pip-services3-elasticsearch-dotnet) | 
   [Node.js](http://github.com/pip-services3-node/pip-services3-elasticsearch-node) | 
-  [Go](http://github.com/pip-services3-node/pip-services3-elasticsearch-go)
+  [Go](http://github.com/pip-services3-go/pip-services3-elasticsearch-go) | 
+  [Dart](http://github.com/pip-services3-dart/pip-services3-elasticsearch-dart)
 
 And more components and modules are added every month!
 
@@ -142,7 +149,8 @@ For now, please, look at the following examples:
   [Java](http://github.com/pip-services-samples/pip-samples-beacons-java) | 
   [Node.js](http://github.com/pip-services-samples/pip-samples-beacons-node) | 
   [Python](http://github.com/pip-services-samples/pip-samples-beacons-python) | 
-  [Go](http://github.com/pip-services-samples/pip-samples-beacons-go)
+  [Go](http://github.com/pip-services-samples/pip-samples-beacons-go) | 
+  [Dart](http://github.com/pip-services-samples/pip-samples-beacons-dart)
 
 
 ## Quick Links
@@ -156,10 +164,11 @@ This project would not be possible without the effort contributed by particular 
 - **Sergey Seroukhov** - the project founder
 - **Mark Zontak** - Node.js and .NET implementations, AWS integration
 - **Volodymyr Tkachenko** - .NET implementation, Service Fabric and Docker deployments
-- **Alex Mazur** - .NET implementations, Azure integration
+- **Alex Mazur** - .NET implementation, Azure integration
 - **Andrew Harrinton** - .NET implementation, ElasticSearch, Prometheus and other technology-specific modules
 - **Egor Nuzhnykh** - Java implementation, documentation and samples
-- **Dmitry Levichev** - Golang implementation, documentation and samples
+- **Anastas Fonotov** - Python implementation
+- **Dmitry Levichev** - Golang and Dart implementations, documentation and samples
 - **Alexey Dvoykin** - documentation and samples
 - **Mark Makarychev** - documentation
 - **Alex Masliev** - Website and graphics
